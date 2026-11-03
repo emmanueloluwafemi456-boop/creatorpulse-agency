@@ -1,17 +1,15 @@
-# CreatorPulse Agency
+# Emmanuel — Personal Twitch Services Portfolio
 
-A responsive single-page Twitch creative agency website built with React, Vite, Tailwind CSS, Framer Motion, and Lucide. Original portfolio artwork is rendered with CSS; every project is explicitly a fictional concept.
+A personal, responsive React portfolio for Emmanuel's Twitch branding, graphics, and channel-support services. Built with Vite, Tailwind CSS, Framer Motion, and Lucide. The public hosting path remains `/creatorpulse-agency/` so the existing GitHub Pages link continues to work; the visible site is personal, not an agency.
 
-## Local development
+## Develop and preview
 
-Use Node.js 22 or 24 and npm. From this checkout:
+Use Node.js 22 or 24 and npm:
 
 ```sh
 npm ci
 npm run dev
 ```
-
-Vite prints its local development address. For a production check:
 
 ```sh
 npm test
@@ -19,25 +17,27 @@ npm run build
 npm run preview
 ```
 
-## Configure before launch
+## Browser checks
 
-Edit `src/config.js` with your public contact email, Fiverr URL, and social URLs. Empty links are omitted. Until email is configured, the contact form validates input and prepares a copyable inquiry; it does not send or store submissions. With an email configured it opens the visitor's email app with a draft that they must send themselves. No backend, credentials, or Twitch API is required.
+```sh
+npx playwright install chromium
+npm run test:e2e
+```
 
-The channel assessment uses questionnaire answers only. It does not scan a Twitch account. Replace sample project records in `src/data.js` when you have real work and permission to display it. Update the concept labels and disclosures accurately when replacing a project.
+Tests start a production preview on port 5174. If using a system Chromium, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its path. This cloud environment uses `/usr/bin/chromium` and may require execution outside the restricted process sandbox for local server/browser operations.
+
+## Personal details
+
+`src/config.js` holds the public name, contact email, Fiverr URL, and social links. The email and Instagram link are reused from Emmanuel's public reference portfolio. The portrait is the original image from that repository and is served as a local optimized WebP. No account credentials are required.
+
+The contact form validates the brief and opens an email draft. The visitor must review and send the email themselves. No backend receives or stores a submission. A copyable brief is also provided. If the contact email is removed, the UI clearly switches to draft-only behavior. Empty Fiverr and social URLs are omitted.
+
+`src/data.js` contains editable services, concept projects, workflow steps, and FAQs. All work is fictional concept work; no client outcomes or experience claims are implied. Update disclosures accurately when adding genuine commissioned work.
+
+`DESIGN-RESEARCH.md` records the inspected sources, browsing limitations, and reasoning behind the redesign.
 
 ## Deploy
 
-Run `npm run build` and deploy `dist/` to any static host. For Vercel or Netlify, choose Vite, use `npm run build`, and set the output directory to `dist`. For GitHub Pages, publish the contents of `dist` using a Pages deployment workflow. The relative Vite base supports a repository subpath. No server rewrite is required because navigation uses section anchors.
+`npm run build` produces `dist/`. Deploy its contents to GitHub Pages, Netlify, or any static host. Vite uses relative asset paths to support a repository subpath. GitHub Pages is configured to publish the `gh-pages` branch from `/ (root)`.
 
-After choosing the production URL, set an absolute `og:image` URL and add `og:url` and a canonical URL in `index.html`; some social crawlers require absolute image URLs. The included SVG social artwork can be exported to PNG for broader sharing compatibility. Fonts are self-hosted in the build.
-
-## Structure
-
-- `src/main.jsx`: page, reusable presentation components, accessible dialogs, forms and interactions
-- `src/styles.css`: responsive visual system and original concept mockups
-- `src/data.js`: editable services, projects, blueprint stages, and FAQs
-- `src/audit.js`: questionnaire recommendation rules
-- `src/config.js`: public contact configuration
-- `tests/audit.test.js`: audit branching and content completeness checks
-
-No production deployment or Git commit is performed by setup.
+The public URL is https://emmanueloluwafemi456-boop.github.io/creatorpulse-agency/ . When moving domains, update the canonical and Open Graph URLs in `index.html`. The included SVG social card can be exported to PNG for social crawlers that require it. Fonts and graphics are self-hosted.

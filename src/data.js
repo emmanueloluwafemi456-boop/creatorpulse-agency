@@ -1,35 +1,238 @@
 export const services = [
- ['Megaphone','Twitch Channel Promotion','Put your channel in the right conversations.',['Audience positioning','Promotion roadmap','Campaign concepts'],'We develop relevant outreach ideas and promotion plans around your content and intended audience. Promotion supports discovery; it cannot guarantee viewers or followers.'],
- ['Search','Twitch Channel SEO & Optimization','Make your channel easier to understand and discover.',['Profile & bio review','Category & tag guidance','Title recommendations'],'A focused review of your titles, bio, categories, tags, and channel structure. Twitch discoverability depends on many factors; we do not promise search rankings.'],
- ['Image','Twitch Banner & Profile Design','Make your first impression unmistakably yours.',['Custom banner concept','Profile artwork','Export-ready assets'],'A cohesive visual direction adapted to your personality, with profile and banner assets prepared for the agreed channel placements.'],
- ['Layers','Stream Overlay & Alert Design','Give every on-stream moment a signature look.',['Overlay layouts','Alert concepts','Scene graphics'],'Purposeful overlays, scene frames, and alert artwork that complement your stream without distracting from it. Formats and software compatibility are agreed before work begins.'],
- ['Palette','Twitch Panels & Channel Branding','Bring every part of your channel together.',['Channel panels','Color & type direction','Visual consistency guide'],'Build a recognizable channel system with coordinated panels, typography, color, and visual guidance for future content.'],
- ['Users','Community Growth Strategy','Turn passing interest into a reason to return.',['Audience research','Engagement ideas','Community roadmap'],'A practical plan for welcoming viewers, encouraging conversation, and building meaningful community habits. No bots, purchased engagement, or guaranteed growth.'],
- ['Clapperboard','Streaming Content Strategy','Create with more intention, stream after stream.',['Content pillars','Stream format ideas','Repurposing plan'],'Shape your content around your strengths and audience interests with repeatable formats and a realistic publishing rhythm.'],
- ['ScanLine','Twitch Channel Audit','Find the next useful step for your channel.',['Presentation review','Discovery checklist','Priority action plan'],'An agreed review of your public channel presentation, content positioning, and branding, followed by prioritized recommendations. No account password is needed.']
+  [
+    "Palette",
+    "Twitch channel branding",
+    "A channel that looks and feels like you.",
+    [
+      "Visual direction & color palette",
+      "Profile artwork & channel banner",
+      "Consistent channel panels",
+    ],
+    "I bring your channel’s visual details together around a clear direction. We start with your content, personality, and the feeling you want viewers to take away, then agree the assets you need.",
+  ],
+  [
+    "Image",
+    "Banners & profile design",
+    "Make a stronger first impression.",
+    [
+      "Custom banner design",
+      "Profile image treatment",
+      "Placement-ready exports",
+    ],
+    "I design a distinctive banner and profile treatment that work together at different sizes. Your channel name, visual style, and content shape the direction.",
+  ],
+  [
+    "Layers",
+    "Overlays, scenes & alerts",
+    "Keep the attention on your stream.",
+    [
+      "Gameplay & chat layouts",
+      "Starting, BRB & ending screens",
+      "Alert artwork",
+    ],
+    "I create stream graphics that support your content rather than cover it. Layouts, safe areas, file formats, and streaming-software requirements are agreed before the project begins.",
+  ],
+  [
+    "LayoutGrid",
+    "Panels & channel setup",
+    "Make your channel easier to explore.",
+    [
+      "About & information panels",
+      "Readable channel structure",
+      "Brand-consistent graphics",
+    ],
+    "I organize the visual side of your channel so viewers can find your story, schedule, links, and community information. No account password is required for design delivery.",
+  ],
+  [
+    "Search",
+    "Channel optimization",
+    "Help the right viewers understand your content.",
+    [
+      "Bio & positioning review",
+      "Title, category & tag guidance",
+      "Schedule presentation",
+    ],
+    "I review how you describe and organize your public channel, then suggest clearer messaging and relevant categories and tags. This is channel discoverability support, not a promise of search rankings.",
+  ],
+  [
+    "Megaphone",
+    "Twitch promotion strategy",
+    "Give your content a thoughtful way to travel.",
+    [
+      "Audience & content positioning",
+      "Promotion ideas for your channels",
+      "Practical distribution plan",
+    ],
+    "I help you plan where and how to share your stream around relevant interests and communities. No spam, bots, purchased viewers, or guaranteed follower counts. Paid advertising management is not included unless separately agreed.",
+  ],
+  [
+    "Clapperboard",
+    "Content & community direction",
+    "Give people a reason to come back.",
+    [
+      "Stream format ideas",
+      "Clip & repurposing direction",
+      "Viewer engagement ideas",
+    ],
+    "I work with you on a realistic content rhythm, repeatable stream ideas, and welcoming ways to involve viewers. Recommendations fit your available time and the kind of community you want to create.",
+  ],
+  [
+    "ScanLine",
+    "Personal channel review",
+    "A fresh pair of eyes on your channel.",
+    [
+      "Public-channel presentation review",
+      "Branding & content observations",
+      "Prioritized next steps",
+    ],
+    "Send me your channel link and the challenge you want to work on. We can agree a focused review of your public presentation and discuss which changes deserve your attention first. This is a personal service, not an automated account scan.",
+  ],
 ];
 export const projects = [
- {name:'NOVA / After hours',category:'Banner Designs',theme:'nova',mark:'NOVA',tag:'AFTER HOURS. ON YOUR TERMS.',description:'A cinematic purple banner system for a fictional late-night variety creator. Bold type, orbital forms, and a clear visual signature.'},
- {name:'VOLT / In the zone',category:'Stream Overlays',theme:'volt',mark:'VOLT',tag:'STAY IN YOUR ELEMENT.',description:'A cyan-accented gameplay frame, chat panel, and starting-soon screen with space for the content to breathe.'},
- {name:'LUNAR / A different orbit',category:'Channel Branding',theme:'lunar',mark:'LUNAR',tag:'FIND YOUR OWN ORBIT.',description:'An atmospheric identity concept combining lunar geometry, soft lilac, and a consistent panel and profile system.'},
- {name:'EMBER / Ready to ignite',category:'Banner Designs',theme:'ember',mark:'EMBER',tag:'MAKE YOUR NEXT MOVE.',description:'Warm amber typography and an abstract horizon bring an energetic fictional channel identity into focus.'},
- {name:'NO SIGNAL / Stand by',category:'Stream Overlays',theme:'signal',mark:'NO SIGNAL',tag:'SOMETHING GOOD IS LOADING.',description:'An editorial intermission and overlay concept with fine grids, sharp green accents, and a distinctive broadcast treatment.'},
- {name:'The discovery edit',category:'Optimization Concepts',theme:'discovery',mark:'THE NEXT CHAPTER',tag:'CLARITY → CONSISTENCY → DISCOVERY',description:'A sample channel architecture showing how a concise bio, intentional categories, readable panels, and a clear schedule can work together.'}
+  {
+    name: "NOVA",
+    subtitle: "A little after-hours energy.",
+    category: "Channel Branding",
+    theme: "nova",
+    mark: "NOVA",
+    tag: "AFTER HOURS. YOUR WORLD.",
+    description:
+      "A fictional variety-streamer identity built around violet orbital forms, bold typography, and a consistent visual language.",
+    deliverables: [
+      "Channel banner & profile direction",
+      "About, schedule & community panels",
+      "Starting-soon screen",
+    ],
+    approach:
+      "I used an oversized wordmark and a simple orbital motif so the identity stays recognizable from a small profile placement to a full stream scene.",
+  },
+  {
+    name: "VOLT",
+    subtitle: "All focus. No distractions.",
+    category: "Stream Overlays",
+    theme: "volt",
+    mark: "VOLT",
+    tag: "IN YOUR ELEMENT.",
+    description:
+      "A clean cyan stream package concept that keeps the gameplay front and center, with a deliberate space for chat and the facecam.",
+    deliverables: [
+      "Gameplay & facecam layout",
+      "Chat scene & alert artwork",
+      "BRB & stream-ending screens",
+    ],
+    approach:
+      "Slim frames, high-contrast labels, and generous safe areas give this concept its shape. The graphics support the content without competing with it.",
+  },
+  {
+    name: "LUNAR",
+    subtitle: "A quieter kind of presence.",
+    category: "Banner Designs",
+    theme: "lunar",
+    mark: "LUNAR",
+    tag: "FIND YOUR OWN ORBIT.",
+    description:
+      "An atmospheric banner concept for a fictional late-night creative streamer, with soft lilac tones and a luminous lunar mark.",
+    deliverables: [
+      "Wide channel banner",
+      "Profile image concept",
+      "Color & typography direction",
+    ],
+    approach:
+      "A restrained palette and spacious composition create a calmer mood. The wordmark remains readable while the moon-inspired geometry gives the channel a signature.",
+  },
+  {
+    name: "EMBER",
+    subtitle: "Made to start something.",
+    category: "Banner Designs",
+    theme: "ember",
+    mark: "EMBER",
+    tag: "MAKE YOUR NEXT MOVE.",
+    description:
+      "A warm, expressive banner and profile concept for a fictional creator whose content is energetic and conversation-led.",
+    deliverables: [
+      "Channel banner concept",
+      "Profile mark",
+      "Supporting color palette",
+    ],
+    approach:
+      "I paired a warm horizon with a strong wordmark to make the channel feel inviting and expressive without using recognizable game imagery.",
+  },
+  {
+    name: "NO SIGNAL",
+    subtitle: "Even the breaks have character.",
+    category: "Stream Overlays",
+    theme: "signal",
+    mark: "NO SIGNAL",
+    tag: "BACK IN A MOMENT.",
+    description:
+      "An editorial intermission concept with a sharp green accent, broadcast details, and space for a returning-soon message.",
+    deliverables: [
+      "BRB scene",
+      "Starting-soon screen",
+      "Matching overlay direction",
+    ],
+    approach:
+      "A simple broadcast grid and oversized typography create a clear hierarchy. The same system can carry into chat and gameplay scenes.",
+  },
+  {
+    name: "THE CHANNEL EDIT",
+    subtitle: "Clarity, from the first click.",
+    category: "Channel Concepts",
+    theme: "discovery",
+    mark: "THE CHANNEL EDIT",
+    tag: "YOUR STORY. CLEARLY TOLD.",
+    description:
+      "A fictional channel organization concept showing how a concise bio, readable information panels, and a clear schedule can work together.",
+    deliverables: [
+      "Sample bio structure",
+      "Panel organization",
+      "Schedule presentation concept",
+    ],
+    approach:
+      "The focus is finding essential information quickly. This is an illustrative content structure, not evidence of improved reach or a live channel audit.",
+  },
 ];
-export const stages = [
- ['Channel Discovery','Start with your story.','We explore your content, audience, goals, and creative preferences.','Creator brief · Audience direction'],
- ['Channel Audit','See the whole picture.','We review public channel presentation and identify opportunities worth prioritizing.','Channel review · Priority checklist'],
- ['Brand Development','Make it feel like you.','We translate your personality into a cohesive visual identity and channel assets.','Creative direction · Brand assets'],
- ['Discoverability Optimization','Bring clarity to your channel.','We refine profile messaging, titles, tags, and channel organization.','Profile guidance · Discovery checklist'],
- ['Promotion Strategy','Build a thoughtful way forward.','We map relevant promotional ideas and community touchpoints around your content.','Promotion roadmap · Content ideas'],
- ['Performance Review','Learn, refine, repeat.','We review available information you choose to share and adjust the next steps.','Review notes · Updated priorities']
+export const process = [
+  [
+    "Tell me about your channel",
+    "Share your link, content, goals, and a few references. I’ll help clarify what you actually need.",
+  ],
+  [
+    "Agree the direction",
+    "We define the deliverables, creative direction, revision scope, and schedule before work starts.",
+  ],
+  [
+    "Create & refine",
+    "I develop the agreed work and use your feedback to refine the details.",
+  ],
+  [
+    "Make it yours",
+    "You receive the agreed files or recommendations, with clear notes on how to put them to use.",
+  ],
 ];
 export const faqs = [
- ['How does Twitch channel promotion work?','We plan audience-relevant positioning, content distribution ideas, and outreach opportunities. The scope is agreed with you first, and promotion never includes purchased viewers or artificial engagement.'],
- ['Can you guarantee followers or viewers?','No. Growth depends on content, consistency, audience fit, and many other factors. We offer clear deliverables and thoughtful recommendations, never guaranteed followers, views, rankings, or monetization.'],
- ['What is included in Twitch SEO?','Profile and bio guidance, title recommendations, category and tag selection, and channel organization. Twitch discovery differs from traditional search, and no ranking outcome is guaranteed.'],
- ['Can I order only a banner or overlay?','Yes. Individual design services are available. Tell us which assets you need, your preferred style, and where they will be used so we can agree a focused scope.'],
- ['How long does a design project take?','Timing depends on the assets, complexity, feedback rounds, and availability. We agree the scope and schedule before the project starts.'],
- ['Do you work with new streamers?','Yes. We can help establish a consistent channel identity and a practical starting strategy, with recommendations suited to your stage and goals.'],
- ['How do I request a channel audit?','Start with the free questionnaire below for an instant answer-based assessment, or use the contact form to prepare a request for a more detailed public-channel review.']
+  [
+    "Can I hire you for just a banner or an overlay?",
+    "Yes. You can request one asset or a coordinated set. Tell me what you need and where you’ll use it, and we can agree a focused scope.",
+  ],
+  [
+    "Do you work with new Twitch streamers?",
+    "Yes. You don’t need a large audience to care about your presentation. I can help you decide which assets or channel improvements make sense for your current stage.",
+  ],
+  [
+    "Can you guarantee followers or viewers?",
+    "No. I don’t offer bots, purchased engagement, or guaranteed growth. My services focus on thoughtful branding, clear channel presentation, and practical content and promotion guidance.",
+  ],
+  [
+    "What does channel optimization include?",
+    "It can include public-profile messaging, bio structure, title ideas, relevant categories and tags, schedule clarity, and panel organization. It does not guarantee rankings, Affiliate status, or monetization.",
+  ],
+  [
+    "How long will my project take?",
+    "That depends on the scope, complexity, feedback, and availability. I’ll agree the schedule and revision expectations with you before starting.",
+  ],
+  [
+    "What do you need from me to get started?",
+    "Your Twitch link, the service you’re interested in, a short description of your goals, and any visual references. Please don’t send account passwords or private credentials.",
+  ],
 ];
