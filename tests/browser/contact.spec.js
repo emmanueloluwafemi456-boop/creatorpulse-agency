@@ -32,7 +32,7 @@ test("WhatsApp and Gmail are correctly addressed in contact, FAQ, and footer", a
     expect(u.hostname).toBe("mail.google.com");
     expect(u.searchParams.get("to")).toBe("emmanueldigital839@gmail.com");
     expect(u.searchParams.get("body")).toContain(
-      "interested in your Twitch services",
+      "interested in your Twitch channel growth services",
     );
   }
 });

@@ -13,12 +13,12 @@ export default function PlatformStrip() {
           <div>
             <span>TOOLS & PLATFORM CONTEXT</span>
             <h2 id="platform-strip-title">
-              Built around a creator’s digital presence.
+              Growth across the right platforms.
             </h2>
           </div>
           <p>
-            Relevant platforms for streaming, promotion, and measurement when
-            configured for your project.
+            Channel presence, paid promotion, video discovery, and measurement —
+            connected where the project calls for them.
           </p>
         </div>
         <ul className="platform-badges">

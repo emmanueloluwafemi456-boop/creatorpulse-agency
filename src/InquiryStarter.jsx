@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Copy, Check, Link, Target, Clock3 } from "lucide-react";
-export const inquiryTemplate = `Hi Emmanuel, I’d like to discuss my Twitch channel.\n\nMy Twitch channel link: \nWhat I stream: \nWhat I’d like to improve: \nMy main goal: \nAny timing or budget to consider: `;
+export const inquiryTemplate = `Hi Emmanuel, I’d like to discuss growth services for my Twitch channel.\n\nMy Twitch channel link: \nWhat I stream: \nWhat I’d like to improve: \nMy main goal: \nAny timing or budget to consider: `;
 export default function InquiryStarter() {
   const [state, setState] = useState("idle");
   async function copy() {
@@ -18,8 +18,8 @@ export default function InquiryStarter() {
       </span>
       <h3 id="inquiry-starter-title">Not sure what to send?</h3>
       <p>
-        A few useful details help me understand your channel and the work you
-        have in mind.
+        Share your channel, your growth goal, and the work you want to move
+        forward. A few details help us start a useful conversation.
       </p>
       <ul>
         {[

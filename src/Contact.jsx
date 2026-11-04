@@ -189,17 +189,18 @@ export default function Contact({ interest, setInterest }) {
   return (
     <div className="contact-grid">
       <div>
-        <div className="eyebrow">LET’S TALK ABOUT YOUR CHANNEL</div>
+        <div className="eyebrow">LET’S TALK ABOUT YOUR CHANNEL GROWTH</div>
         <h2>
-          Have a stream.
+          Your next stage.
           <br />
-          Have a vision.
+          A stronger plan.
           <br />
-          <span className="gradient-text">Let’s connect.</span>
+          <span className="gradient-text">Let’s build it.</span>
         </h2>
         <p>
-          Tell me where your channel is now and what you want help with. Choose
-          the conversation that works best for you.
+          Tell me what you stream and where you want your channel to go. We can
+          discuss growth strategy, promotion, creator pages, or ongoing
+          management — and the work needed to put your plan into action.
         </p>
         <div className="contact-person">
           <img
@@ -211,7 +212,7 @@ export default function Contact({ interest, setInterest }) {
           />
           <div>
             <strong>You’ll be talking to me.</strong>
-            <span>Emmanuel · Twitch channel support</span>
+            <span>Emmanuel · Twitch channel growth expert</span>
           </div>
           <MessageCircle size={20} />
         </div>
@@ -230,7 +231,7 @@ export default function Contact({ interest, setInterest }) {
       >
         <div className="form-introduction">
           <span>PROJECT INQUIRY</span>
-          <h3>Tell me what you have in mind.</h3>
+          <h3>Tell me about your growth goals.</h3>
           <p>Every field is required so I have the details to help.</p>
         </div>
         <fieldset disabled={status === "sending"}>
@@ -302,7 +303,7 @@ export default function Contact({ interest, setInterest }) {
                 minLength={10}
                 maxLength={5000}
                 rows={4}
-                placeholder="Your goals, what feels stuck, and the help you’re looking for…"
+                placeholder="Your channel goals, what you want to build or improve, and the services you’re interested in…"
                 onInput={edited}
               />
             </label>

@@ -2,12 +2,12 @@ export const channelServices = [
   {
     id: "audit",
     title: "Channel Audit",
-    step: "Understand your starting point",
+    step: "Set your growth direction",
     icon: "ScanLine",
     summary:
-      "Find the gaps, recognize what is already working, and choose a useful next move.",
+      "Turn a channel review into clear growth priorities and an actionable direction.",
     description:
-      "I review your public Twitch presentation, content positioning, schedule clarity, and the way viewers are invited to participate. We start with your goals and current stage, then agree which areas deserve a closer look.",
+      "I assess your channel presentation, content positioning, schedule clarity, and viewer journey against the goals we agree. The audit establishes a foundation for growth work: what to build on, what needs to change, and which services can help put the priorities into practice.",
     forWho:
       "New creators needing a starting point, active streamers feeling stuck, or established channels preparing their next phase.",
     deliverables: [
@@ -16,7 +16,7 @@ export const channelServices = [
       "A prioritized action list with suggested next steps",
     ],
     journey:
-      "Creates a baseline for the work that follows. If earning from your channel is a goal, we can identify readiness questions and areas to review against Twitch’s current requirements.",
+      "Sets the direction for the research, creator presence, promotion, or management work that follows. When monetization is a goal, we also identify preparation questions to review against Twitch’s current requirements.",
     boundary:
       "A personal review, not an automated Twitch scan. No invented account statistics, eligibility decision, or earnings forecast.",
     input:
@@ -29,9 +29,9 @@ export const channelServices = [
     step: "Listen to your audience",
     icon: "ClipboardList",
     summary:
-      "Learn what your viewers care about before you change your content or promotion.",
+      "Use audience insight to shape stronger content, communication, and promotion decisions.",
     description:
-      "I help you define a useful audience question and turn it into a short, readable survey. The questions can explore content preferences, stream timing, community interests, or why people return. Distribution and collection are agreed with you.",
+      "I design focused audience surveys around the decisions your channel needs to make. I prepare the questions, agree a suitable distribution and collection approach, and summarize genuine responses into practical content, scheduling, or promotion recommendations.",
     forWho:
       "Creators with viewers or community members who can provide relevant feedback. A pre-launch creator may instead need audience research first.",
     deliverables: [
@@ -53,9 +53,9 @@ export const channelServices = [
     step: "Give your audience a clear destination",
     icon: "PanelTop",
     summary:
-      "Bring your stream, schedule, community links, and creator information together.",
+      "Build a creator destination that connects your content, schedule, community, and business inquiries.",
     description:
-      "I design and build a responsive creator page with a clear introduction and a focused next action. The content and links are selected around your goals: finding a stream, following a schedule, joining your community, or making a genuine business inquiry.",
+      "I design and build responsive creator landing pages around your channel goals. The page gives your content, schedule, community links, and agreed inquiry options a coherent home — with a clear next action for visitors arriving from your profiles or promotion.",
     forWho:
       "Creators whose important information is scattered across different profiles, or who need a professional destination for promotion.",
     deliverables: [
@@ -77,9 +77,9 @@ export const channelServices = [
     step: "Prepare a relevant application",
     icon: "FileCheck2",
     summary:
-      "Organize your channel story and application materials before you apply.",
+      "Prepare a clear, well-organized application for a relevant Creator Clubs opportunity.",
     description:
-      "I help you review the program information available at the time, organize your creator links and supporting material, and explain your channel clearly in an application draft. This is application-preparation support for Twitch’s official Creator Clubs program, when a suitable opportunity is available.",
+      "I prepare the agreed materials for a relevant application to Twitch’s official Creator Clubs program: a current-guidance checklist, organized channel links and creator work, and a clear creator-statement draft. We check the program’s availability and criteria first, then shape an application that accurately represents your channel.",
     forWho:
       "Creators considering Twitch’s official Creator Clubs program when it is open to applications and whose published criteria may fit their channel.",
     deliverables: [
@@ -98,12 +98,12 @@ export const channelServices = [
   {
     id: "management",
     title: "Channel Management",
-    step: "Build a consistent working rhythm",
+    step: "Manage your ongoing channel work",
     icon: "CalendarDays",
     summary:
-      "Keep the agreed channel tasks, content plans, and community updates organized.",
+      "Keep your content plans, communication, and agreed channel operations moving.",
     description:
-      "I support the channel workflow we agree together: schedule planning, content coordination, community updates, routine presentation tasks, and periodic review. The scope is based on what your channel needs and what you want to keep handling yourself.",
+      "I manage the channel responsibilities we agree: content and stream calendars, approved updates, asset coordination, community communication, and routine operational work. Progress reviews help us keep the work aligned with your direction while making it clear which decisions and responsibilities stay with you.",
     forWho:
       "Creators who need ongoing coordination as their content and community commitments grow.",
     deliverables: [
@@ -122,12 +122,12 @@ export const channelServices = [
   {
     id: "ads",
     title: "Google Ads",
-    step: "Consider a focused paid test",
+    step: "Plan, launch & refine paid promotion",
     icon: "MousePointer2",
     summary:
-      "Plan relevant paid promotion when your content, destination, and budget are ready.",
+      "Plan, launch, and refine approved campaigns around your channel-promotion goals.",
     description:
-      "I work with you on an agreed campaign objective, audience and creative direction, an appropriate destination, and a controlled testing plan. Setup, management, reporting, and measurement requirements are confirmed before a campaign is commissioned or launched.",
+      "I plan and carry out the Google Ads work we agree, from audience and creative direction to campaign setup, approved launch, management, and reporting. We define the objective, destination, available budget, and measurement approach first, then use the information available to refine the campaign.",
     forWho:
       "Creators with a clear promotion objective, suitable content or landing page, and a budget they can afford to test.",
     deliverables: [
@@ -136,7 +136,7 @@ export const channelServices = [
       "Spend and performance reporting using available measurements",
     ],
     journey:
-      "Adds an optional paid channel after the foundations are in place. We assess whether a test makes sense rather than assuming every creator needs advertising.",
+      "Puts an agreed paid-promotion strategy into action when your content, destination, and budget are ready. Advertising is one possible part of channel growth, selected for a clear purpose rather than used as a default for every creator.",
     boundary:
       "Advertising spend is separate from service fees. Campaigns depend on Google’s review and policies. Do not assume that ad clicks can be attributed to Twitch follows or earnings; measurement depends on the destination, available tools, and required consent. No viewers, Affiliate status, or income is guaranteed.",
     input:
@@ -146,32 +146,39 @@ export const channelServices = [
 ];
 export const process = [
   [
-    "Understand your channel",
-    "We start with your channel link, your goals, and the challenge you want help with. Where useful, an audit helps us separate the priorities from the distractions.",
-    "A clear starting point and recommended priorities.",
+    "Set the growth direction",
+    "We connect your goals with your content, intended audience, and current channel stage. Relevant research or an audit gives us a clear basis for deciding what to do next.",
+    "Growth priorities linked to your channel and audience.",
   ],
   [
-    "Agree the work",
-    "Before starting, we confirm the service, deliverables, responsibilities, timing, and feedback arrangements. You can ask questions and make sure the scope fits your needs.",
-    "Written scope, expectations, and an agreed plan.",
+    "Build the delivery plan",
+    "We choose the services and define the deliverables, campaign or content requirements, responsibilities, budget, and schedule before the work begins.",
+    "An agreed scope and a practical execution plan.",
   ],
   [
-    "Create, coordinate & refine",
-    "I carry out the agreed work and share it at the relevant review points. Your feedback helps keep the recommendations, content, or setup aligned with your channel.",
-    "Visible progress and agreed opportunities for feedback.",
+    "Execute & refine",
+    "I build, launch, coordinate, or manage the agreed work. We use feedback and relevant information at the planned review points to refine the direction and keep delivery on track.",
+    "Hands-on delivery, with clear progress and review points.",
   ],
   [
-    "Review & hand over",
-    "We review what has been delivered and how to use it. For ongoing services, we agree the next review; for a one-off project, we clarify the handover and useful next steps.",
-    "Your agreed deliverables, handover notes, and next priorities.",
+    "Review & move forward",
+    "We review the deliverables and information available, clarify the handover, and identify what to maintain or improve next. Ongoing work follows the review rhythm we agree.",
+    "A clear handover and informed next growth priorities.",
   ],
 ];
 export const faqs = [
   [
+    "What does working with a channel growth expert involve?",
+    [
+      "I bring together channel growth strategy and the practical services needed to execute it. That can include an audit to establish priorities, audience research, a creator landing-page build, agreed Google Ads campaign work, or management of ongoing channel activities. We choose the combination around your goals and current stage.",
+      "My role includes carrying out the work we agree, coordinating delivery, and reviewing the information available. You work directly with me through planning, execution, and review. Each project has a defined scope, so it is clear what I will produce or manage, what I need from you, and how we will assess the work.",
+    ],
+  ],
+  [
     "Do I need to buy all six services?",
     [
-      "No. Each service can be discussed on its own. The six services describe different ways I can support a creator; they are not a compulsory package or a sequence everyone needs to follow. We start with your situation, the problem you want to solve, and the resources you have available.",
-      "For example, you might only need a channel audit and a prioritized action list. A creator with an established routine might need management support instead. I’ll explain the proposed scope before you decide, including which work is optional or premature for your channel.",
+      "No. Each service can be discussed on its own. The six services form a broader channel growth offer, from strategy and audience research to creator pages, promotion, and ongoing management. They are not a compulsory package or a sequence everyone needs to follow. We start with your situation, the problem you want to solve, and the resources you have available.",
+      "For example, you might only need a channel audit and a prioritized action list. A creator with an established routine might hire me to handle channel management or an agreed promotion campaign instead. I’ll explain the proposed scope before you decide, including which work is optional or premature for your channel.",
     ],
   ],
   [
@@ -227,7 +234,7 @@ export const faqs = [
     "Can you guarantee monetization or earnings?",
     [
       "No. Income depends on factors such as your content, audience response, consistency, platform requirements, and policy compliance. Twitch makes its own eligibility and program decisions. A service purchase cannot guarantee approval, followers, viewers, sponsorships, or earnings, and I do not offer purchased engagement or bots.",
-      "What I can offer is agreed work that supports your preparation and decision-making: a clearer view of the channel, useful audience feedback, organized information, practical promotion planning, or operational support. We set expectations around those deliverables and the information available, rather than an outcome nobody can responsibly promise.",
+      "What I offer is growth strategy backed by agreed execution: channel research and priorities, creator-page builds, promotion planning and campaign work, or ongoing channel management. We assess the work using agreed deliverables and available information, while keeping audience and income outcomes separate from the work I can directly control.",
     ],
   ],
   [

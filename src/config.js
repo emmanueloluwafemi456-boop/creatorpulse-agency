@@ -8,8 +8,8 @@ export const siteConfig = {
   socials: { twitch: null, instagram: null, discord: null },
 };
 export function gmailComposeUrl(
-  subject = "Twitch services inquiry",
-  body = "Hi Emmanuel! I found your website and I’m interested in your Twitch services. Can we discuss what would work best for my channel?",
+  subject = "Twitch channel growth inquiry",
+  body = "Hi Emmanuel! I found your website and I’m interested in your Twitch channel growth services. Can we discuss what would work best for my channel?",
 ) {
   const params = new URLSearchParams({
     view: "cm",

@@ -1,6 +1,6 @@
-# Emmanuel — Personal Twitch Channel Services
+# Emmanuel — Twitch Channel Growth Expert
 
-A responsive single-page React portfolio for Channel Audit, Survey, Creator Landing Page, Twitch Creator Club application preparation, Channel Management, and Google Ads. Services appear in a three-column, two-row desktop grid and open detailed on-page dialogs. Service exploration stays on the same page. External navigation is limited to the owner’s WhatsApp and Gmail contact choices.
+A personal, responsive React portfolio positioning Emmanuel as a Twitch channel growth expert who combines strategy and hands-on execution. The six core services are Channel Audit, Survey, Creator Landing Page, Twitch Creator Club application preparation, Channel Management, and Google Ads. Services appear in a three-column, two-row desktop grid and open detailed on-page dialogs. Service exploration stays on the same page. External navigation is limited to the owner’s WhatsApp and Gmail contact choices.
 
 ## Development
 
@@ -42,7 +42,7 @@ Publish the contents of `dist/` to the existing `gh-pages` branch, configured in
 
 ## Reading and motion
 
-The page uses solid purple accents, brighter dark surfaces, 16px main paragraphs and form inputs, and larger labels and supporting text. The process section describes four stages and their deliverables; ten FAQs include fuller, grouped answers.
+The page uses solid purple accents, brighter dark surfaces, 16px main paragraphs and form inputs, and larger labels and supporting text. The process section describes four stages and their deliverables; eleven FAQs include fuller, grouped answers.
 
 `src/ServicesTicker.jsx` automatically lists all six current services in a seamless, slow leftward loop. It runs continuously by default, has an optional pause/resume control, and becomes a static wrapping list when the visitor prefers reduced motion. The duplicate list is hidden from assistive technology. Readability browser checks cover representative text contrast (at least 4.5:1), body type size, responsive layouts, solid backgrounds, and motion behavior.
 

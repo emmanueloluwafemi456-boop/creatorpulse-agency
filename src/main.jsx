@@ -50,7 +50,10 @@ function Logo() {
         e<span>.</span>
       </span>
       <span>
-        Emmanuel<small>TWITCH CHANNEL SUPPORT</small>
+        Emmanuel
+        <small>
+          TWITCH CHANNEL <span>GROWTH EXPERT</span>
+        </small>
       </span>
     </a>
   );
@@ -186,7 +189,7 @@ function App() {
             <div className="hero-grid">
               <Reveal className="hero-copy">
                 <div className="intro-label">
-                  <span /> YOUR CHANNEL. YOUR PERSONALITY. YOUR NEXT CHAPTER.
+                  <span /> TWITCH GROWTH STRATEGY. HANDS-ON DELIVERY.
                 </div>
                 <p className="hello">
                   Hey, I’m Emmanuel <ArrowUpRight size={17} />
@@ -194,22 +197,22 @@ function App() {
                 <h1>
                   I help Twitch creators
                   <br />
-                  <span className="gradient-text">find their direction.</span>
+                  <span className="gradient-text">grow their presence.</span>
                   <br />
-                  And build from there.
+                  From plan to action.
                 </h1>
                 <p className="hero-description">
-                  Channel reviews, audience insight, creator pages, and
-                  practical promotion support. I work directly with you to
-                  choose useful next steps for your Twitch channel — at the
-                  stage you’re at now.
+                  I combine channel growth strategy, audience research, creator
+                  pages, paid promotion, and ongoing management to help you
+                  build a stronger Twitch presence. We turn your goals into work
+                  that gets planned, created, launched, and refined.
                 </p>
                 <div className="hero-actions">
                   <a href="#contact" className="button primary">
-                    Let’s talk about your channel <ArrowUpRight size={17} />
+                    Plan my channel growth <ArrowUpRight size={17} />
                   </a>
                   <a href="#services" className="button secondary">
-                    Explore channel services <ArrowRight size={16} />
+                    Explore growth services <ArrowRight size={16} />
                   </a>
                 </div>
                 <div className="hero-personal-note">
@@ -228,7 +231,7 @@ function App() {
                 <div className="portrait-circle">
                   <img
                     src="./emmanuel-portrait.webp"
-                    alt="Emmanuel, Twitch channel support specialist"
+                    alt="Emmanuel, Twitch channel growth expert"
                     width="896"
                     height="1346"
                     fetchPriority="high"
@@ -236,7 +239,7 @@ function App() {
                 </div>
                 <div className="portrait-name">
                   <span className="signature">Emmanuel</span>
-                  <small>YOUR CHANNEL SUPPORT PARTNER</small>
+                  <small>STRATEGY · PROMOTION · DELIVERY</small>
                 </div>
                 <div className="portrait-tag">
                   <Twitch size={17} />
@@ -257,23 +260,23 @@ function App() {
               {[
                 [
                   Palette,
-                  "A useful starting point",
-                  "Channel reviews with practical priorities.",
+                  "Growth strategy",
+                  "A clear direction for your channel and audience.",
                 ],
                 [
                   Monitor,
-                  "An audience perspective",
-                  "Feedback that can inform your next move.",
+                  "Audience understanding",
+                  "Research to guide stronger content and promotion decisions.",
                 ],
                 [
                   Search,
-                  "A clearer channel presence",
-                  "Thoughtful presentation & discovery.",
+                  "Promotion & presence",
+                  "Creator pages and campaigns built around your content.",
                 ],
                 [
                   MessageCircle,
-                  "A direct collaboration",
-                  "You and me, from brief to delivery.",
+                  "Hands-on execution",
+                  "Your agreed plan put into practice, with me doing the work.",
                 ],
               ].map(([Icon, title, text]) => (
                 <div key={title}>
@@ -292,7 +295,7 @@ function App() {
             <div className="about-photo">
               <img
                 src="./emmanuel-portrait.webp"
-                alt="Emmanuel, your personal Twitch channel support partner"
+                alt="Emmanuel, your Twitch channel growth expert and service provider"
                 width="896"
                 height="1346"
                 loading="lazy"
@@ -318,36 +321,40 @@ function App() {
                 I’m Emmanuel.
                 <br />
                 <span className="muted">
-                  Your channel deserves
-                  <br />a personal approach.
+                  Your growth strategy.
+                  <br />
+                  My hands-on execution.
                 </span>
               </h2>
               <p>
-                I help Twitch creators choose practical next steps through
-                channel reviews, audience feedback, creator pages, and relevant
-                promotion support.
+                I’m a Twitch channel growth expert offering the strategy and
+                practical services creators need to develop their channel. I
+                work across audience understanding, creator presence, promotion,
+                and ongoing channel management.
               </p>
               <p>
-                Tell me what you stream, what you care about, and where you want
-                to go. I’ll work with you on the details that make your channel
-                feel more like your own.
+                Depending on the project, I build creator pages, prepare
+                audience surveys, develop and manage campaigns, coordinate
+                channel activity, and turn findings into work you can put to
+                use. You work directly with me from the initial growth direction
+                through delivery and review.
               </p>
               <div className="about-features">
                 {[
                   [
                     MousePointer2,
-                    "Hands-on channel support",
-                    "You work directly with me, from the first idea to the final details.",
+                    "Strategy with execution",
+                    "A clear plan, followed by the agreed work to bring it into practice.",
                   ],
                   [
                     Palette,
-                    "Your goals come first",
-                    "The work starts with your content, your audience, and your goals.",
+                    "Growth shaped around your channel",
+                    "Your content, audience, resources, and goals shape the direction.",
                   ],
                   [
                     FileCheck2,
-                    "Clear from the beginning",
-                    "We agree the deliverables, feedback process, and schedule before starting.",
+                    "One point of contact",
+                    "You work directly with me through planning, delivery, and review.",
                   ],
                 ].map(([Icon, title, text]) => (
                   <div key={title}>
@@ -363,10 +370,10 @@ function App() {
               </div>
               <ul className="about-checks">
                 {[
-                  "Direct communication",
-                  "Support matched to your stage",
-                  "Clear project scope",
-                  "Practical channel guidance",
+                  "Channel growth strategy",
+                  "Hands-on project delivery",
+                  "Promotion and management",
+                  "Clear scope and communication",
                 ].map((x) => (
                   <li key={x}>
                     <Check size={13} />
@@ -375,7 +382,7 @@ function App() {
                 ))}
               </ul>
               <a href="#contact" className="button primary">
-                Tell me about your channel <ArrowUpRight size={16} />
+                Discuss my growth goals <ArrowUpRight size={16} />
               </a>
             </div>
             <NextStepGuide onExplore={setModal} onInquire={inquire} />
@@ -386,12 +393,13 @@ function App() {
             <Reveal className="center-heading">
               <Eyebrow>IS THIS A GOOD FIT?</Eyebrow>
               <h2>
-                For creators who care
-                <br className="mobile-break" /> about their channel.
+                For creators ready to build
+                <br className="mobile-break" /> their next stage.
               </h2>
               <p>
-                You don’t need a huge audience. A clear intention is a good
-                place to start.
+                Starting out, repositioning, or building on what you already
+                have — let’s choose the work that makes sense for your next
+                stage.
               </p>
             </Reveal>
             <div className="fit-grid">
@@ -402,8 +410,8 @@ function App() {
                 </div>
                 <ul>
                   {[
-                    "You want your channel to feel more like you.",
-                    "You want useful support for the stage your channel is at.",
+                    "You want to build a stronger channel presence.",
+                    "You want strategy, promotion, or management matched to your goals.",
                     "You care about real viewers and a genuine community.",
                     "You’re open to ideas and ready to share useful feedback.",
                     "You want to work directly with the person doing the work.",
@@ -449,17 +457,18 @@ function App() {
             <Reveal className="engagement-intro">
               <Eyebrow>WHAT WORKING TOGETHER LOOKS LIKE</Eyebrow>
               <h2>
-                Clear steps.
+                A growth direction.
                 <br />
-                <span className="muted">Work you can follow.</span>
+                <span className="muted">A plan put into action.</span>
               </h2>
               <p>
-                You should know what we’re working on, why it matters, and what
-                happens next. Here’s how I keep the work organized from the
-                first conversation to delivery.
+                Channel growth needs both a direction and the work to carry it
+                forward. Here’s how I connect your goals to the agreed research,
+                build, campaign, or management tasks — with clear review points
+                along the way.
               </p>
               <div className="engagement-principles">
-                <h3>Clear from the beginning</h3>
+                <h3>Growth work, clearly scoped</h3>
                 <ul>
                   <li>
                     <Check size={16} />
@@ -475,7 +484,7 @@ function App() {
                 </ul>
               </div>
               <a className="button secondary" href="#contact">
-                Start with your channel <ArrowUpRight size={17} />
+                Discuss your channel growth <ArrowUpRight size={17} />
               </a>
             </Reveal>
             <ol className="engagement-steps">
@@ -545,11 +554,13 @@ function App() {
             <a className="footer-wordmark" href="#home">
               Emmanuel<span>.</span>
             </a>
-            <span className="footer-specialty">TWITCH CHANNEL SUPPORT</span>
+            <span className="footer-specialty">
+              TWITCH CHANNEL GROWTH EXPERT
+            </span>
             <p>
-              Clear priorities and practical support
+              Channel growth strategy and hands-on services.
               <br />
-              for your next stage as a creator.
+              From planning to promotion and ongoing management.
             </p>
           </div>
           <nav className="footer-navigation" aria-label="Footer navigation">

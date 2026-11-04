@@ -7684,3 +7684,24 @@ select option {
     bottom: 8px;
   }
 }
+/* Keep the longer growth-expert role legible without squeezing the mobile CTA. */
+.nav-contact {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.logo small > span {
+  display: inline;
+}
+@media (max-width: 600px) {
+  .logo small {
+    font-size: 9px;
+    line-height: 1.35;
+    letter-spacing: 0.65px;
+  }
+  .logo small > span {
+    display: block;
+  }
+  .nav-contact {
+    white-space: nowrap;
+  }
+}

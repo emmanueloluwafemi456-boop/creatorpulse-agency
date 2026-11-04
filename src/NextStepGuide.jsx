@@ -4,8 +4,8 @@ import { channelServices } from "./data";
 const priorities = [
   {
     id: "audit",
-    label: "Find my starting point",
-    text: "A channel review can help you identify the priorities before deciding what to work on.",
+    label: "Plan my channel’s next stage",
+    text: "An audit can define your growth priorities and the work needed to put them into action.",
   },
   {
     id: "survey",
@@ -14,7 +14,7 @@ const priorities = [
   },
   {
     id: "landing",
-    label: "Bring my links together",
+    label: "Build my creator presence",
     text: "Give viewers one clear destination for your stream, schedule, community links, and creator information.",
   },
   {
@@ -24,13 +24,13 @@ const priorities = [
   },
   {
     id: "management",
-    label: "Organize ongoing channel work",
+    label: "Manage ongoing channel work",
     text: "Agree the recurring tasks, calendar, and responsibilities you would like help coordinating.",
   },
   {
     id: "ads",
-    label: "Consider paid promotion",
-    text: "Discuss whether an advertising test fits your content, destination, objective, and available budget.",
+    label: "Plan paid channel promotion",
+    text: "Plan an agreed campaign around your promotion goal, with the right content, destination, and budget.",
   },
 ];
 export default function NextStepGuide({ onExplore, onInquire }) {
@@ -44,8 +44,8 @@ export default function NextStepGuide({ onExplore, onInquire }) {
           <Compass size={21} />
         </span>
         <div>
-          <span className="next-step-kicker">A USEFUL PLACE TO START</span>
-          <h3 id="next-step-title">Find your next step.</h3>
+          <span className="next-step-kicker">CHOOSE YOUR GROWTH PRIORITY</span>
+          <h3 id="next-step-title">Your next growth move.</h3>
         </div>
       </div>
       <label className="next-step-label" htmlFor="channel-priority">

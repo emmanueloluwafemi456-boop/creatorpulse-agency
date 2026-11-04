@@ -57,7 +57,7 @@ test("every service opens useful details within the page", async ({ page }) => {
       "What we can agree to deliver",
     );
     await expect(page.getByRole("dialog")).toContainText(
-      "How it supports your next stage",
+      "Where this fits in your growth plan",
     );
     await page.keyboard.press("Escape");
     await expect(page.getByRole("dialog")).toHaveCount(0);

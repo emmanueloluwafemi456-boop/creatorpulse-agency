@@ -113,7 +113,7 @@ export function ChannelServices({ onSelect }) {
       <div className="container">
         <div className="channel-section-heading">
           <div>
-            <div className="eyebrow">YOUR CHANNEL. THE RIGHT NEXT STEP.</div>
+            <div className="eyebrow">TWITCH CHANNEL GROWTH SERVICES</div>
             <h2>
               Start where you are.
               <br />
@@ -121,9 +121,9 @@ export function ChannelServices({ onSelect }) {
             </h2>
           </div>
           <p>
-            Six ways I can support your channel, from understanding its current
-            stage to building a more consistent presence and considering
-            relevant promotion.
+            Six services that connect strategy with delivery: audience research,
+            creator presence, campaign execution, and ongoing channel
+            management.
           </p>
         </div>
         <div className="channel-start-note">
@@ -132,8 +132,9 @@ export function ChannelServices({ onSelect }) {
             <strong>
               Not sure where to begin? Start with a Channel Audit.
             </strong>{" "}
-            Then we can choose the work that fits your audience, goals, and
-            resources. You don’t need every service.
+            Then we can move into the research, build, promotion, or management
+            your channel needs. Choose individual services or an agreed
+            combination.
           </p>
         </div>
         <div className="channel-services-grid">
@@ -182,22 +183,22 @@ export function ChannelServices({ onSelect }) {
             program or platform requirements.
           </p>
           <p>
-            <strong>Working toward monetization?</strong> I can help with
-            relevant preparation and agreed channel work. Program approval and
-            earnings depend on factors beyond these services and cannot be
-            guaranteed.
+            <strong>Working toward monetization?</strong> I can help with growth
+            strategy, creator presence, promotion, and channel operations.
+            Approval and earnings still depend on platform requirements and
+            audience response; they cannot be guaranteed.
           </p>
         </div>
         <div className="channel-section-cta">
           <div>
-            <h3>Let’s choose a useful starting point.</h3>
+            <h3>Let’s plan your next stage of growth.</h3>
             <p>
-              Tell me your channel, your current stage, and the goal you’re
-              working toward.
+              Share your channel and goals. We’ll define the strategy and
+              hands-on services that move the work forward.
             </p>
           </div>
           <a className="button primary" href="#contact">
-            Discuss my channel <ArrowUpRight size={16} />
+            Discuss my growth goals <ArrowUpRight size={16} />
           </a>
         </div>
       </div>
@@ -220,7 +221,7 @@ export function ChannelServiceDetails({ service, onInquire }) {
           </li>
         ))}
       </ul>
-      <h3>How it supports your next stage</h3>
+      <h3>Where this fits in your growth plan</h3>
       <p>{service.journey}</p>
       <h3>What I’d need from you</h3>
       <p>{service.input}</p>

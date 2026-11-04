@@ -1,0 +1,59 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+>
+  <rect width="1200" height="630" fill="#18151f" />
+  <rect x="80" y="155" width="90" height="5" rx="2" fill="#bda0de" />
+  <text
+    x="80"
+    y="105"
+    fill="#d1b7e8"
+    font-family="Arial,sans-serif"
+    font-size="23"
+    letter-spacing="2"
+  >
+    EMMANUEL / TWITCH CHANNEL GROWTH EXPERT
+  </text>
+  <text
+    x="80"
+    y="275"
+    fill="#f7f4fa"
+    font-family="Arial,sans-serif"
+    font-size="78"
+    font-weight="bold"
+  >
+    Growth strategy.
+  </text>
+  <text
+    x="80"
+    y="375"
+    fill="#c1a5e4"
+    font-family="Arial,sans-serif"
+    font-size="78"
+    font-weight="bold"
+  >
+    Hands-on execution.
+  </text>
+  <text
+    x="80"
+    y="475"
+    fill="#f7f4fa"
+    font-family="Arial,sans-serif"
+    font-size="78"
+    font-weight="bold"
+  >
+    Your next chapter.
+  </text>
+  <path d="M80 520h1040" stroke="#5c466c" />
+  <text
+    x="80"
+    y="570"
+    fill="#d0c9d9"
+    font-family="Arial,sans-serif"
+    font-size="23"
+  >
+    Audience research · Creator pages · Promotion · Channel management
+  </text>
+</svg>

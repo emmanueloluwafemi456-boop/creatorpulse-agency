@@ -148,7 +148,7 @@ test("expanded FAQ and deliverable-led process remain accessible", async ({
   await page.goto("/");
   await expect(page.locator(".engagement-step")).toHaveCount(4);
   await expect(page.locator(".engagement-output")).toHaveCount(4);
-  await expect(page.locator(".faq-list details")).toHaveCount(10);
+  await expect(page.locator(".faq-list details")).toHaveCount(11);
   for (const d of await page.locator(".faq-list details").all()) {
     await d.locator("summary").click();
     await expect(d.locator(".faq-answer p")).toHaveCount(2);
