@@ -185,7 +185,7 @@ export const faqs = [
     "What will I receive from a Channel Audit?",
     [
       "We agree which parts of your public channel and content presentation to review. The work can cover your channel introduction, positioning, schedule clarity, information structure, and the way viewers are invited to engage. Relevant analytics can add context if you choose to share them; the portfolio does not scan your account automatically.",
-      "The proposed deliverables are a review, practical observations, and a prioritized list of recommended next steps. The aim is to help you decide what deserves attention first. It is not a fabricated channel score, a promise of growth, or a decision about Twitch program eligibility.",
+      "The proposed deliverables are a review, practical observations, and a prioritized list of recommended next steps. If we agree to include a score, I explain the review rubric alongside the findings. The score pictured on this site is an illustrative example, not an official Twitch rating or an assessment of your channel. No growth or eligibility outcome is promised.",
     ],
   ],
   [

@@ -52,4 +52,10 @@ The page uses solid purple accents, brighter dark surfaces, 16px main paragraphs
 
 ## Service card imagery
 
-The six service cards use a local, optimized WebP contact sheet at `public/services/service-scenes.webp`. Each card shows its matching portion with CSS cropping, followed by a service heading, description, three deliverables, and a full-width details button. The generated laptop/interface scenes are illustrative service imagery, not client screenshots, real campaign results, or official application portals. The original generated PNG remains outside the checkout in `/workspace/generated_images/`.
+The six service cards use a local, optimized WebP contact sheet at `public/services/service-scenes-detailed.webp`. Each card shows its matching portion with CSS cropping, followed by a service heading, description, three deliverables, and a full-width details button. The generated laptop/interface scenes are illustrative service imagery, not client screenshots, real campaign results, or official application portals. The original generated PNG remains outside the checkout in `/workspace/generated_images/`.
+
+## Platform context and inquiry starter
+
+`src/PlatformStrip.jsx` displays self-hosted Twitch, Google Ads, Google Analytics, and YouTube marks sourced from Simple Icons. These identify relevant platforms; they are not certification, partnership, or endorsement badges. `src/InquiryStarter.jsx` fills the FAQ sidebar with a useful copyable inquiry template, including a manual-copy fallback when clipboard access is unavailable. No information is collected by this panel.
+
+The service imagery uses clearly disclosed demo metrics and a sample independent audit score. These are illustrative interfaces, not real client performance or an official Twitch score. Current audit findings and any scoring rubric are agreed with the client.

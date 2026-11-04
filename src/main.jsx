@@ -26,6 +26,8 @@ import { siteConfig } from "./config";
 import Contact, { ContactOptions } from "./Contact";
 import ServicesTicker from "./ServicesTicker";
 import NextStepGuide from "./NextStepGuide";
+import InquiryStarter from "./InquiryStarter";
+import PlatformStrip from "./PlatformStrip";
 import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-500.css";
 import "@fontsource/inter/latin-600.css";
@@ -284,6 +286,7 @@ function App() {
             <ServicesTicker />
           </div>
         </section>
+        <PlatformStrip />
         <section id="about" className="section container">
           <Reveal className="about-grid">
             <div className="about-photo">
@@ -510,6 +513,7 @@ function App() {
                 <span>Ask me directly</span>
                 <ContactOptions compact location="faq" />
               </div>
+              <InquiryStarter />
             </Reveal>
             <div className="faq-list">
               {faqs.map(([q, a]) => (

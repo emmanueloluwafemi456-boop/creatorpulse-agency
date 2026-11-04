@@ -81,13 +81,13 @@ export function ServicePreview({ service }) {
     <div
       className="service-scene"
       role="img"
-      aria-label={`Illustrative laptop preview for ${service.title}; not live account data`}
+      aria-label={`Illustrative laptop preview for ${service.title}; all displayed scores and metrics are sample data, not client results`}
     >
       <img
-        src="./services/service-scenes.webp"
+        src="./services/service-scenes-detailed.webp"
         alt=""
         aria-hidden="true"
-        width="1881"
+        width="1882"
         height="836"
         loading="lazy"
         decoding="async"
@@ -96,6 +96,13 @@ export function ServicePreview({ service }) {
           transform: `translateY(-${index < 3 ? 25 : 75}%)`,
         }}
       />
+      <span className="scene-sample-label">
+        {service.id === "audit"
+          ? "Sample audit score · not an official Twitch rating"
+          : service.id === "management" || service.id === "ads"
+            ? "Illustrative preview · sample metrics, not client results"
+            : "Illustrative service preview"}
+      </span>
     </div>
   );
 }
