@@ -9,4 +9,4 @@ await writeFile(
   new URL("../dist/preview/index.html", import.meta.url),
   preview.replaceAll('href="./#work"', 'href="../#work"'),
 );
-await writeFile(new URL("../dist/.nojekyll", import.meta.url), "");
+await writeFile(new URL("../dist/.nojekyll", import.meta.url), "Static site; no Jekyll processing required.\n");
