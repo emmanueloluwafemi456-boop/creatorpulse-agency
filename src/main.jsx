@@ -25,6 +25,7 @@ import { ChannelServices, ChannelServiceDetails } from "./ChannelServices";
 import { siteConfig } from "./config";
 import Contact, { ContactOptions } from "./Contact";
 import ServicesTicker from "./ServicesTicker";
+import NextStepGuide from "./NextStepGuide";
 import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-500.css";
 import "@fontsource/inter/latin-600.css";
@@ -374,6 +375,7 @@ function App() {
                 Tell me about your channel <ArrowUpRight size={16} />
               </a>
             </div>
+            <NextStepGuide onExplore={setModal} onInquire={inquire} />
           </Reveal>
         </section>
         <section id="fit" className="fit-section section">

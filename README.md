@@ -45,3 +45,7 @@ Publish the contents of `dist/` to the existing `gh-pages` branch, configured in
 The page uses solid purple accents, brighter dark surfaces, 16px main paragraphs and form inputs, and larger labels and supporting text. The process section describes four stages and their deliverables; ten FAQs include fuller, grouped answers.
 
 `src/ServicesTicker.jsx` automatically lists all six current services in a seamless, slow leftward loop. It runs continuously by default, has an optional pause/resume control, and becomes a static wrapping list when the visitor prefers reduced motion. The duplicate list is hidden from assistive technology. Readability browser checks cover representative text contrast (at least 4.5:1), body type size, responsive layouts, solid backgrounds, and motion behavior.
+
+## About-section service guide
+
+`src/NextStepGuide.jsx` uses the space beneath the portrait on desktop to help visitors explore a service that matches their stated priority. It is a local selector, not a live channel scan or an assessment of eligibility. It opens the existing service dialogs and carries the chosen service into the on-page contact form. On tablet and mobile, the visual and DOM order is portrait, introduction, then guide.

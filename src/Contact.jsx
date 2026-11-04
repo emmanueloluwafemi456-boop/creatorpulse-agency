@@ -223,6 +223,7 @@ export default function Contact({ interest, setInterest }) {
         </p>
       </div>
       <form
+        id="project-brief"
         className="contact-form connected-contact-form"
         onSubmit={submit}
         onChange={edited}

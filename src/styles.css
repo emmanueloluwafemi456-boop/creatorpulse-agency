@@ -6843,3 +6843,276 @@ select option {
   background: #7541ad;
   color: #fff;
 }
+/* About: turn the space beneath the portrait into a useful, local service guide. */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "portrait introduction" "guide introduction";
+  column-gap: 65px;
+  row-gap: 24px;
+  align-items: start;
+}
+.about-photo {
+  grid-area: portrait;
+  margin-top: 0;
+  align-self: start;
+}
+.about-copy {
+  grid-area: introduction;
+  min-width: 0;
+}
+.next-step-guide {
+  grid-area: guide;
+  align-self: start;
+  min-width: 0;
+  padding: 25px;
+  background: #282031;
+  border: 1px solid #866396;
+  border-radius: 12px;
+}
+.next-step-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 22px;
+}
+.next-step-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: #3d2b4c;
+  border: 1px solid #9674ae;
+  border-radius: 8px;
+  color: #e3c7f7;
+}
+.next-step-kicker {
+  font-size: 10px;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  color: #c8aede;
+  display: block;
+  margin-bottom: 5px;
+}
+.next-step-heading h3 {
+  font-size: 23px;
+  line-height: 1.3;
+  letter-spacing: -0.7px;
+  color: #f4eafa;
+}
+.next-step-label {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #e2d1ed;
+  display: block;
+  margin-bottom: 10px;
+}
+.next-step-guide select {
+  font-size: 16px;
+  width: 100%;
+  background: #1b1523;
+  border: 1px solid #9470a4;
+  color: #f3e8fa;
+  padding: 12px;
+  border-radius: 7px;
+  min-height: 48px;
+  line-height: 1.5;
+}
+.next-step-recommendation {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid #6a4d79;
+}
+.next-step-recommendation > span {
+  display: block;
+  font-size: 10px;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  color: #c0a0d6;
+  margin-bottom: 9px;
+}
+.next-step-recommendation h4 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
+  margin: 0 0 10px;
+  color: #f0e3f9;
+}
+.next-step-recommendation p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #d5c5e1;
+  margin: 0;
+}
+.next-step-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.next-step-explore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid #a67dc1;
+  border-radius: 7px;
+  background: #7541ad;
+  color: #fff;
+  padding: 12px 15px;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.next-step-explore:hover {
+  background: #8250bb;
+}
+.next-step-actions > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #e0c6f1;
+}
+.next-step-note {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #beaccb;
+  margin: 17px 0 0;
+}
+@media (max-width: 1100px) {
+  .about-grid {
+    column-gap: 40px;
+  }
+  .next-step-guide {
+    padding: 23px 21px;
+  }
+  .next-step-heading h3 {
+    font-size: 22px;
+  }
+  .next-step-actions {
+    gap: 15px;
+  }
+  .next-step-kicker {
+    font-size: 9px;
+  }
+  .next-step-recommendation p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 900px) {
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "portrait" "introduction" "guide";
+    gap: 34px;
+  }
+  .about-photo {
+    width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
+    aspect-ratio: 1.05;
+  }
+  .about-copy {
+    width: 100%;
+    max-width: 670px;
+    margin-inline: auto;
+  }
+  .next-step-guide {
+    width: 100%;
+    max-width: 670px;
+    margin-inline: auto;
+    padding: 27px;
+  }
+  .next-step-heading h3 {
+    font-size: 25px;
+  }
+  .next-step-kicker {
+    font-size: 11px;
+  }
+  .next-step-actions {
+    justify-content: start;
+    gap: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .about-grid {
+    gap: 30px;
+  }
+  .next-step-guide {
+    padding: 24px 21px;
+    border-radius: 10px;
+  }
+  .next-step-heading {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .next-step-symbol {
+    width: 37px;
+    height: 37px;
+  }
+  .next-step-kicker {
+    font-size: 9px;
+    letter-spacing: 0.7px;
+  }
+  .next-step-heading h3 {
+    font-size: 23px;
+  }
+  .next-step-label {
+    font-size: 14px;
+  }
+  .next-step-guide select {
+    font-size: 16px;
+    padding: 12px 10px;
+    min-height: 48px;
+  }
+  .next-step-recommendation {
+    margin-top: 20px;
+    padding-top: 18px;
+  }
+  .next-step-recommendation > span {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+  }
+  .next-step-recommendation h4 {
+    font-size: 21px;
+  }
+  .next-step-recommendation p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .next-step-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 17px;
+    margin-top: 21px;
+  }
+  .next-step-explore {
+    min-height: 48px;
+    font-size: 14px;
+    padding: 13px 12px;
+  }
+  .next-step-actions > a {
+    justify-content: center;
+    font-size: 14px;
+    min-height: 32px;
+  }
+  .next-step-note {
+    font-size: 13px;
+    line-height: 1.8;
+    margin-top: 17px;
+  }
+}
+#project-brief {
+  scroll-margin-top: 18px;
+}
