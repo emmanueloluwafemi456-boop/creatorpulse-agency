@@ -11,27 +11,18 @@ import {
   Minus,
   Check,
   Palette,
-  Image,
-  Layers,
-  LayoutGrid,
   Search,
-  Megaphone,
-  Clapperboard,
-  ScanLine,
   MessageCircle,
   MousePointer2,
   FileCheck2,
   Twitch,
   Sparkles,
   Copy,
-  Send,
   CircleCheck,
-  Eye,
   Monitor,
-  Play,
-  Radio,
 } from "lucide-react";
-import { services, projects, process, faqs } from "./data";
+import { channelServices, process, faqs } from "./data";
+import { ChannelServices, ChannelServiceDetails } from "./ChannelServices";
 import { siteConfig } from "./config";
 import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-500.css";
@@ -41,21 +32,10 @@ import "@fontsource/space-grotesk/latin-500.css";
 import "@fontsource/space-grotesk/latin-600.css";
 import "@fontsource/space-grotesk/latin-700.css";
 import "./styles.css";
-const iconMap = {
-  Palette,
-  Image,
-  Layers,
-  LayoutGrid,
-  Search,
-  Megaphone,
-  Clapperboard,
-  ScanLine,
-};
 const navigation = [
   ["Start here", "home"],
   ["About me", "about"],
   ["Services", "services"],
-  ["My work", "work"],
   ["How I work", "process"],
   ["Contact", "contact"],
 ];
@@ -66,7 +46,7 @@ function Logo() {
         e<span>.</span>
       </span>
       <span>
-        Emmanuel<small>TWITCH CREATIVE SPECIALIST</small>
+        Emmanuel<small>TWITCH CHANNEL SUPPORT</small>
       </span>
     </a>
   );
@@ -145,104 +125,6 @@ function Modal({ title, children, onClose }) {
     </div>
   );
 }
-function WorkVisual({ project, large = false }) {
-  return (
-    <div
-      className={`work-visual ${project.theme} ${large ? "large" : ""}`}
-      role="img"
-      aria-label={`${project.name}: original ${project.category.toLowerCase()} concept`}
-    >
-      <div className="visual-grain" />
-      <div className="visual-orbit one" />
-      <div className="visual-orbit two" />
-      <div className="visual-top">
-        <span>
-          <Twitch size={11} />{" "}
-          {project.theme === "discovery" ? "CHANNEL NOTES" : "STREAM IDENTITY"}
-        </span>
-        <span>PERSONAL PROJECT / 0{projects.indexOf(project) + 1}</span>
-      </div>
-      {project.theme === "volt" ? (
-        <div className="overlay-demo">
-          <div className="overlay-landscape">
-            <span className="mountain mountain-one" />
-            <span className="mountain mountain-two" />
-            <div className="overlay-title">
-              <span>LIVE YOUR WAY</span>
-              <strong>
-                VOLT
-                <ArrowUpRight size={24} />
-              </strong>
-            </div>
-            <div className="camera-box">
-              <Eye size={20} />
-              <span>YOUR CAMERA</span>
-            </div>
-          </div>
-          <div className="chat-demo">
-            <span>STREAM CHAT</span>
-            <i />
-            <i />
-            <i />
-            <i />
-            <div>
-              <MessageCircle size={12} /> YOUR COMMUNITY
-            </div>
-          </div>
-        </div>
-      ) : project.theme === "discovery" ? (
-        <div className="channel-demo">
-          <div className="channel-demo-heading">
-            <span>e.</span>
-            <div>
-              <strong>YOUR CHANNEL</strong>
-              <small>A clear introduction starts here.</small>
-            </div>
-          </div>
-          <div className="channel-panels">
-            <span>
-              ABOUT ME <ArrowUpRight size={12} />
-            </span>
-            <span>
-              THE SCHEDULE <ArrowUpRight size={12} />
-            </span>
-            <span>
-              OUR COMMUNITY <ArrowUpRight size={12} />
-            </span>
-          </div>
-          <div className="channel-line" />
-          <div className="channel-line short" />
-        </div>
-      ) : (
-        <div className="visual-title">
-          <span>
-            {project.theme === "signal"
-              ? "TAKE A BREATH. STAY A WHILE."
-              : "A CHANNEL WITH ITS OWN CHARACTER"}
-          </span>
-          <strong>
-            {project.mark}
-            {project.theme === "nova" && <Sparkles />}
-          </strong>
-          <p>{project.tag}</p>
-          {project.theme === "signal" && (
-            <div className="loading-track">
-              <i />
-            </div>
-          )}
-        </div>
-      )}
-      <div className="visual-bottom">
-        <span>DESIGNED BY EMMANUEL</span>
-        <span>
-          {project.theme === "signal"
-            ? "STREAM WILL RETURN"
-            : "CONCEPT / NOT CLIENT WORK"}
-        </span>
-      </div>
-    </div>
-  );
-}
 function Contact({ interest, setInterest }) {
   const [draft, setDraft] = useState(""),
     [copied, setCopied] = useState(false);
@@ -265,8 +147,9 @@ function Contact({ interest, setInterest }) {
           <span className="gradient-text">Let’s connect.</span>
         </h2>
         <p>
-          Whether you need one banner, a full channel identity, or a clearer
-          direction — tell me what you’re thinking.
+          Tell me where your channel is now and what you want help with. We can
+          discuss an audit, audience feedback, a creator page, or ongoing
+          support.
         </p>
         <div className="contact-person">
           <img
@@ -278,7 +161,7 @@ function Contact({ interest, setInterest }) {
           />
           <div>
             <strong>You’ll be talking to me.</strong>
-            <span>Emmanuel · Twitch creative specialist</span>
+            <span>Emmanuel · Twitch channel support</span>
           </div>
           <MessageCircle size={20} />
         </div>
@@ -347,8 +230,8 @@ function Contact({ interest, setInterest }) {
               <option disabled value="">
                 Choose a service
               </option>
-              {services.map((s) => (
-                <option key={s[1]}>{s[1]}</option>
+              {channelServices.map((s) => (
+                <option key={s.id}>{s.title}</option>
               ))}
               <option>Let’s figure it out together</option>
             </select>
@@ -419,7 +302,6 @@ function Contact({ interest, setInterest }) {
 }
 function App() {
   const [menu, setMenu] = useState(false),
-    [filter, setFilter] = useState("All work"),
     [modal, setModal] = useState(null),
     [interest, setInterest] = useState("");
   function inquire(service = "") {
@@ -483,21 +365,22 @@ function App() {
                 <h1>
                   I help Twitch creators
                   <br />
-                  <span className="gradient-text">look the part.</span>
+                  <span className="gradient-text">find their direction.</span>
                   <br />
-                  And stand out.
+                  And build from there.
                 </h1>
                 <p className="hero-description">
-                  Channel branding, stream graphics, and thoughtful promotion
-                  support. I work directly with you to build a Twitch presence
-                  that feels like you — and gives people a reason to remember.
+                  Channel reviews, audience insight, creator pages, and
+                  practical promotion support. I work directly with you to
+                  choose useful next steps for your Twitch channel — at the
+                  stage you’re at now.
                 </p>
                 <div className="hero-actions">
                   <a href="#contact" className="button primary">
                     Let’s talk about your channel <ArrowUpRight size={17} />
                   </a>
-                  <a href="#work" className="button secondary">
-                    Explore my work <ArrowRight size={16} />
+                  <a href="#services" className="button secondary">
+                    Explore channel services <ArrowRight size={16} />
                   </a>
                 </div>
                 <div className="hero-personal-note">
@@ -516,7 +399,7 @@ function App() {
                 <div className="portrait-circle">
                   <img
                     src="./emmanuel-portrait.webp"
-                    alt="Emmanuel, Twitch branding and channel services specialist"
+                    alt="Emmanuel, Twitch channel support specialist"
                     width="896"
                     height="1346"
                     fetchPriority="high"
@@ -524,7 +407,7 @@ function App() {
                 </div>
                 <div className="portrait-name">
                   <span className="signature">Emmanuel</span>
-                  <small>YOUR CREATIVE PARTNER</small>
+                  <small>YOUR CHANNEL SUPPORT PARTNER</small>
                 </div>
                 <div className="portrait-tag">
                   <Twitch size={17} />
@@ -545,13 +428,13 @@ function App() {
               {[
                 [
                   Palette,
-                  "An identity that fits",
-                  "Branding with your personality in it.",
+                  "A useful starting point",
+                  "Channel reviews with practical priorities.",
                 ],
                 [
                   Monitor,
-                  "A stream that feels connected",
-                  "Graphics that work together on screen.",
+                  "An audience perspective",
+                  "Feedback that can inform your next move.",
                 ],
                 [
                   Search,
@@ -572,15 +455,15 @@ function App() {
               ))}
             </Reveal>
             <div className="expertise-line">
-              <span>TWITCH BRANDING</span>
+              <span>CHANNEL AUDITS</span>
               <i />
-              <span>OVERLAYS & ALERTS</span>
+              <span>AUDIENCE FEEDBACK</span>
               <i />
-              <span>CHANNEL OPTIMIZATION</span>
+              <span>CREATOR PAGES</span>
               <i />
               <span>PROMOTION STRATEGY</span>
               <i />
-              <span>CREATOR-FIRST DESIGN</span>
+              <span>CHANNEL MANAGEMENT</span>
             </div>
           </div>
         </section>
@@ -589,7 +472,7 @@ function App() {
             <div className="about-photo">
               <img
                 src="./emmanuel-portrait.webp"
-                alt="Emmanuel, your personal Twitch creative partner"
+                alt="Emmanuel, your personal Twitch channel support partner"
                 width="896"
                 height="1346"
                 loading="lazy"
@@ -620,9 +503,9 @@ function App() {
                 </span>
               </h2>
               <p>
-                I help Twitch creators bring their ideas into focus — through
-                distinctive channel graphics, a more consistent identity, and
-                practical direction for how they show up.
+                I help Twitch creators choose practical next steps through
+                channel reviews, audience feedback, creator pages, and relevant
+                promotion support.
               </p>
               <p>
                 Tell me what you stream, what you care about, and where you want
@@ -633,13 +516,13 @@ function App() {
                 {[
                   [
                     MousePointer2,
-                    "Hands-on creative work",
+                    "Hands-on channel support",
                     "You work directly with me, from the first idea to the final details.",
                   ],
                   [
                     Palette,
-                    "Your personality comes first",
-                    "The visual direction starts with your content, taste, and community.",
+                    "Your goals come first",
+                    "The work starts with your content, your audience, and your goals.",
                   ],
                   [
                     FileCheck2,
@@ -661,7 +544,7 @@ function App() {
               <ul className="about-checks">
                 {[
                   "Direct communication",
-                  "Tailored visual direction",
+                  "Support matched to your stage",
                   "Clear project scope",
                   "Practical channel guidance",
                 ].map((x) => (
@@ -699,7 +582,7 @@ function App() {
                 <ul>
                   {[
                     "You want your channel to feel more like you.",
-                    "You need branding, graphics, or a clearer channel direction.",
+                    "You want useful support for the stage your channel is at.",
                     "You care about real viewers and a genuine community.",
                     "You’re open to ideas and ready to share useful feedback.",
                     "You want to work directly with the person doing the work.",
@@ -724,7 +607,7 @@ function App() {
                     "You’re looking to buy followers, viewers, or engagement.",
                     "You expect guaranteed growth or instant monetization.",
                     "You want to copy another creator’s identity or artwork.",
-                    "You need account shortcuts instead of thoughtful creative work.",
+                    "You need account shortcuts instead of thoughtful channel work.",
                   ].map((x) => (
                     <li key={x}>
                       <X size={14} />
@@ -739,142 +622,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section id="services" className="section container">
-          <Reveal className="center-heading">
-            <Eyebrow>TWITCH SERVICES, WITH A PERSONAL TOUCH</Eyebrow>
-            <h2>How I can help you.</h2>
-            <p>
-              A single asset or a more connected channel presence. Let’s start
-              with what you need.
-            </p>
-          </Reveal>
-          <Reveal className="services-intro">
-            <Sparkles size={18} />
-            <div>
-              <span>WHAT CAN WE WORK ON TOGETHER?</span>
-              <p>
-                I offer Twitch branding, banners, overlays, alerts, panels,
-                channel optimization, and promotion guidance. Every project
-                starts with your channel and an agreed scope — no fixed bundles
-                to squeeze into.
-              </p>
-            </div>
-          </Reveal>
-          <div className="services-grid">
-            {services.map((s, i) => {
-              const Icon = iconMap[s[0]];
-              return (
-                <Reveal key={s[1]} className="service-card">
-                  <button
-                    aria-label={"Explore " + s[1]}
-                    onClick={() => setModal({ type: "service", item: s })}
-                  >
-                    <span className="service-icon">
-                      <Icon size={19} />
-                    </span>
-                    <ArrowUpRight className="service-arrow" size={16} />
-                    <h3>{s[1]}</h3>
-                    <p>{s[2]}</p>
-                    <span className="service-more">
-                      Explore the service <ArrowRight size={12} />
-                    </span>
-                  </button>
-                </Reveal>
-              );
-            })}
-            <Reveal className="service-card service-question">
-              <span className="question-mark">?</span>
-              <h3>Not sure what you need?</h3>
-              <p>
-                Send me your channel. We can talk through a useful starting
-                point.
-              </p>
-              <a
-                href="#contact"
-                onClick={() => setInterest("Let’s figure it out together")}
-                className="text-link"
-              >
-                Let’s figure it out <ArrowUpRight size={14} />
-              </a>
-            </Reveal>
-          </div>
-        </section>
-        <section id="work" className="section work-section">
-          <div className="container">
-            <Reveal className="work-heading">
-              <div>
-                <Eyebrow>A FEEL FOR MY CREATIVE DIRECTION</Eyebrow>
-                <h2>
-                  Different personalities.
-                  <br />
-                  <span className="muted">Different possibilities.</span>
-                </h2>
-              </div>
-              <div>
-                <p>
-                  Original Twitch concepts that show how I think about identity,
-                  layout, and the details on screen.
-                </p>
-                <span className="concept-disclosure">
-                  PERSONAL CONCEPTS · NOT CLIENT PROJECTS
-                </span>
-              </div>
-            </Reveal>
-            <div className="filters" role="group" aria-label="Filter my work">
-              {[
-                "All work",
-                "Channel Branding",
-                "Banner Designs",
-                "Stream Overlays",
-                "Channel Concepts",
-              ].map((x) => (
-                <button
-                  key={x}
-                  aria-pressed={filter === x}
-                  onClick={() => setFilter(x)}
-                  className={filter === x ? "active" : ""}
-                >
-                  {x}
-                </button>
-              ))}
-            </div>
-            <div className="work-grid" aria-live="polite">
-              {projects
-                .filter((p) => filter === "All work" || filter === p.category)
-                .map((p, i) => (
-                  <button
-                    className="project-card"
-                    key={p.name}
-                    onClick={() => setModal({ type: "project", item: p })}
-                  >
-                    <div className="project-image">
-                      <WorkVisual project={p} />
-                      <span className="project-view">
-                        Explore concept <ArrowUpRight size={16} />
-                      </span>
-                    </div>
-                    <div className="project-caption">
-                      <div>
-                        <span>
-                          {p.category} <i /> Concept project
-                        </span>
-                        <h3>
-                          {p.name} <span>— {p.subtitle}</span>
-                        </h3>
-                      </div>
-                      <ArrowUpRight size={22} />
-                    </div>
-                  </button>
-                ))}
-            </div>
-            <div className="work-bottom">
-              <span>Have a different style in mind? I’d love to hear it.</span>
-              <a href="#contact" className="text-link">
-                Let’s create something yours <ArrowUpRight size={16} />
-              </a>
-            </div>
-          </div>
-        </section>
+        <ChannelServices onSelect={setModal} />
         <section id="process" className="section container">
           <Reveal className="process-heading">
             <div>
@@ -941,7 +689,9 @@ function App() {
       <footer>
         <div className="container footer-top">
           <Logo />
-          <span>Good design. Clear direction. Your kind of channel.</span>
+          <span>
+            Clear priorities. Practical support. Your kind of channel.
+          </span>
           <a href="#home" className="back-top">
             Back to top <ArrowUp size={14} />
           </a>
@@ -973,67 +723,11 @@ function App() {
         )}
       </footer>
       {modal && (
-        <Modal
-          title={modal.type === "service" ? modal.item[1] : modal.item.name}
-          onClose={() => setModal(null)}
-        >
-          {modal.type === "service" ? (
-            <>
-              <Eyebrow>HOW I CAN HELP YOUR CHANNEL</Eyebrow>
-              <p>{modal.item[4]}</p>
-              <h3>What we can work on</h3>
-              <ul className="modal-deliverables">
-                {modal.item[3].map((x) => (
-                  <li key={x}>
-                    <Check size={16} />
-                    {x}
-                  </li>
-                ))}
-              </ul>
-              <p className="scope-note">
-                We’ll agree the exact scope, file formats, revisions, and timing
-                before work begins.
-              </p>
-              <a
-                href="#contact"
-                className="button primary"
-                onClick={() => inquire(modal.item[1])}
-              >
-                Ask me about this service <ArrowUpRight size={16} />
-              </a>
-            </>
-          ) : (
-            <>
-              <WorkVisual project={modal.item} large />
-              <span className="concept-disclosure">
-                PERSONAL CONCEPT · {modal.item.category}
-              </span>
-              <p>{modal.item.description}</p>
-              <h3>The thinking behind it</h3>
-              <p>{modal.item.approach}</p>
-              <h3>Concept deliverables</h3>
-              <ul className="modal-deliverables">
-                {modal.item.deliverables.map((x) => (
-                  <li key={x}>
-                    <Check size={16} />
-                    {x}
-                  </li>
-                ))}
-              </ul>
-              <p className="scope-note">
-                An original fictional design exploration. This is not
-                commissioned client work, a live account review, or evidence of
-                campaign performance.
-              </p>
-              <a
-                href="#contact"
-                className="button primary"
-                onClick={() => inquire()}
-              >
-                Have something like this in mind? <ArrowUpRight size={16} />
-              </a>
-            </>
-          )}
+        <Modal title={modal.title} onClose={() => setModal(null)}>
+          <ChannelServiceDetails
+            service={modal}
+            onInquire={() => inquire(modal.title)}
+          />
         </Modal>
       )}
     </>

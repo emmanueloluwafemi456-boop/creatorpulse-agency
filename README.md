@@ -1,21 +1,20 @@
-# Emmanuel — Personal Twitch Services Portfolio
+# Emmanuel — Personal Twitch Channel Services
 
-A personal, responsive React portfolio for Emmanuel's Twitch branding, graphics, and channel-support services. Built with Vite, Tailwind CSS, Framer Motion, and Lucide. The public hosting path remains `/creatorpulse-agency/` so the existing GitHub Pages link continues to work; the visible site is personal, not an agency.
+A responsive single-page React portfolio for Channel Audit, Survey, Creator Landing Page, Twitch Creator Club application preparation, Channel Management, and Google Ads. Services appear in a three-column, two-row desktop grid and open detailed on-page dialogs. No alternate preview page or external service redirects are required.
 
-## Develop and preview
+## Development
 
-Use Node.js 22 or 24 and npm:
+Use Node.js 22 or 24:
 
 ```sh
 npm ci
 npm run dev
-```
-
-```sh
 npm test
 npm run build
 npm run preview
 ```
+
+`npm run build` generates `dist/` and a static-site `.nojekyll` marker. Fonts and the owner's portrait are self-hosted. The public GitHub Pages URL remains https://emmanueloluwafemi456-boop.github.io/creatorpulse-agency/ . The services section is `#services`; `#work` is a local anchor alias for older links.
 
 ## Browser checks
 
@@ -24,24 +23,17 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-Tests start a production preview on port 5174. If using a system Chromium, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its path. This cloud environment uses `/usr/bin/chromium` and may require execution outside the restricted process sandbox for local server/browser operations.
+For a system Chromium, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. This cloud environment uses `/usr/bin/chromium`. Server and browser operations may require execution outside the restricted process sandbox. The tests run the production preview on port 5174 and check all six services, the desktop grid, same-page dialogs, keyboard focus, inquiry selection, contact validation, FAQs, mobile navigation, and responsive overflow.
 
-## Personal details
+## Content and contact
 
-`src/config.js` holds the public name, contact email, Fiverr URL, and social links. The email and Instagram link are reused from Emmanuel's public reference portfolio. The portrait is the original image from that repository and is served as a local optimized WebP. No account credentials are required.
+- `src/data.js`: all six service scopes, deliverables, suitability, boundaries, and FAQs.
+- `src/ChannelServices.jsx`: service-specific deliverable illustrations and on-page details.
+- `src/config.js`: public name, email, Fiverr URL, and social links. Contact values are intentionally empty until the owner adds them.
+- `SERVICE-SCOPE-RESEARCH.md`: service reasoning, actual source-access limitations, and claim boundaries. Older design-direction documents describe superseded proposals.
 
-The contact form validates the brief and opens an email draft. The visitor must review and send the email themselves. No backend receives or stores a submission. A copyable brief is also provided. If the contact email is removed, the UI clearly switches to draft-only behavior. Empty Fiverr and social URLs are omitted.
+Without an email configured, the contact form prepares a copyable project brief and sends nothing. With an email configured, it also offers an explicit email-draft link; the visitor reviews and sends it. The website does not run live Twitch scans, collect survey responses, submit official club applications, or launch ad campaigns. Those are separate client services with agreed scope and prerequisites.
 
-`src/data.js` contains editable services, concept projects, workflow steps, and FAQs. All work is fictional concept work; no client outcomes or experience claims are implied. Update disclosures accurately when adding genuine commissioned work.
+## Deployment
 
-`DESIGN-RESEARCH.md` records the inspected sources, browsing limitations, and reasoning behind the redesign.
-
-## Deploy
-
-`npm run build` produces `dist/`. Deploy its contents to GitHub Pages, Netlify, or any static host. Vite uses relative asset paths to support a repository subpath. GitHub Pages is configured to publish the `gh-pages` branch from `/ (root)`.
-
-The public URL is https://emmanueloluwafemi456-boop.github.io/creatorpulse-agency/ . When moving domains, update the canonical and Open Graph URLs in `index.html`. The included SVG social card can be exported to PNG for social crawlers that require it. Fonts and graphics are self-hosted.
-
-## Work-section direction preview
-
-`/work-section-concept.html` is a separate, no-index proposal for a promotion-and-strategy showcase. It leaves the current React portfolio section in place. The rationale, research limitations, and commercial recommendations are in `WORK-SECTION-DIRECTION.md`.
+Publish the contents of `dist/` to the existing `gh-pages` branch, configured in GitHub Pages as `/ (root)`. Relative asset paths support the current repository subpath. Preserve the previous Pages commit as the new deployment's parent. Confirm the GitHub Pages workflow completes successfully after pushing; a branch push alone does not establish a live deployment.

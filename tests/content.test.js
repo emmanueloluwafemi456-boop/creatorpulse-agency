@@ -1,27 +1,47 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { services, projects, process, faqs } from "../src/data.js";
+import { channelServices, process, faqs } from "../src/data.js";
 import { siteConfig } from "../src/config.js";
-test("each service has useful scope and a distinct inquiry option", () => {
-  assert.equal(services.length, 8);
-  assert.equal(new Set(services.map((s) => s[1])).size, 8);
-  for (const service of services) {
-    assert.equal(service[3].length, 3);
-    assert.ok(service[4].length > 100);
+test("six ordered services contain useful scope, deliverables and realistic boundaries", () => {
+  assert.deepEqual(
+    channelServices.map((s) => s.title),
+    [
+      "Channel Audit",
+      "Survey",
+      "Creator Landing Page",
+      "Creator Club Application",
+      "Channel Management",
+      "Google Ads",
+    ],
+  );
+  for (const s of channelServices) {
+    assert.equal(s.deliverables.length, 3);
+    assert.ok(s.description.length > 100);
+    assert.ok(s.boundary.length > 50);
+    assert.ok(s.input.length > 30);
   }
 });
-test("every concept includes the reasoning and deliverables a client needs to assess it", () => {
-  assert.equal(projects.length, 6);
-  assert.equal(new Set(projects.map((p) => p.category)).size, 4);
-  for (const p of projects) {
-    assert.ok(p.approach.length > 80);
-    assert.ok(p.description.length > 80);
-    assert.equal(p.deliverables.length, 3);
-  }
-});
-test("personal project workflow and direct public contact are configured", () => {
+test("eligibility and paid promotion are not represented as guaranteed monetization", () => {
+  assert.match(
+    channelServices.find((s) => s.id === "club").description,
+    /Twitch’s official Creator Clubs/,
+  );
+  assert.match(
+    channelServices.find((s) => s.id === "club").boundary,
+    /cannot guarantee acceptance/,
+  );
+  assert.match(
+    channelServices.find((s) => s.id === "ads").boundary,
+    /spend is separate/,
+  );
+  assert.match(
+    channelServices.find((s) => s.id === "ads").boundary,
+    /No viewers, Affiliate status, or income is guaranteed/,
+  );
   assert.equal(process.length, 4);
   assert.equal(faqs.length, 6);
-  assert.equal(siteConfig.name, "Emmanuel");
-  assert.match(siteConfig.email, /^[^@]+@[^@]+\.[^@]+$/);
+});
+test("contact remains unconfigured until the owner adds details", () => {
+  assert.equal(siteConfig.email, null);
+  assert.ok(Object.values(siteConfig.socials).every((s) => s === null));
 });
