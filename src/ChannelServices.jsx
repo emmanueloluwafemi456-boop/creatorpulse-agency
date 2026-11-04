@@ -19,203 +19,83 @@ const icons = {
   CalendarDays,
   MousePointer2,
 };
+const presentation = {
+  audit: {
+    title: "Twitch Channel Audit",
+    label: "Channel analysis & audit",
+    bullets: [
+      "Profile & positioning review",
+      "Content & discovery observations",
+      "Prioritized action plan",
+    ],
+  },
+  survey: {
+    title: "Creator Survey",
+    label: "Audience & creator research",
+    bullets: [
+      "Audience & content questions",
+      "Survey distribution plan",
+      "Summary of available responses",
+    ],
+  },
+  landing: {
+    title: "Creator Landing Page",
+    label: "Creator presence & landing",
+    bullets: [
+      "Responsive creator-page design",
+      "Schedule & community links",
+      "Agreed sections & handover",
+    ],
+  },
+  club: {
+    title: "Creator Club Application",
+    label: "Official program preparation",
+    bullets: [
+      "Current program guidance check",
+      "Channel links & supporting work",
+      "Creator statement preparation",
+    ],
+  },
+  management: {
+    title: "Twitch Channel Management",
+    label: "Channel operations & consistency",
+    bullets: [
+      "Content calendar & channel updates",
+      "Agreed task coordination",
+      "Progress notes & review priorities",
+    ],
+  },
+  ads: {
+    title: "Google Ads (Channel Promotion)",
+    label: "Paid promotion & discovery",
+    bullets: [
+      "Audience & creative planning",
+      "Agreed setup or management",
+      "Spend & performance reporting",
+    ],
+  },
+};
 export function ServicePreview({ service }) {
-  const label =
-    service.id === "audit"
-      ? "Example channel-audit deliverable"
-      : service.id === "survey"
-        ? "Example audience-survey questions"
-        : service.id === "landing"
-          ? "Example creator landing-page structure"
-          : service.id === "club"
-            ? "Example application preparation checklist"
-            : service.id === "management"
-              ? "Example channel management calendar"
-              : "Example Google Ads planning brief";
+  const index = channelServices.findIndex((item) => item.id === service.id);
   return (
     <div
-      className={`service-preview preview-${service.id}`}
+      className="service-scene"
       role="img"
-      aria-label={label}
+      aria-label={`Illustrative laptop preview for ${service.title}; not live account data`}
     >
-      <div className="deliverable-sheet">
-        <div className="preview-document-top">
-          <span>
-            {service.id === "ads"
-              ? "CAMPAIGN PLANNING"
-              : service.id === "landing"
-                ? "CREATOR PAGE STRUCTURE"
-                : service.id === "management"
-                  ? "CHANNEL WORKFLOW"
-                  : "CREATOR SUPPORT"}
-          </span>
-          <span>EMMANUEL</span>
-        </div>
-        {service.id === "audit" && (
-          <>
-            <div className="preview-doc-title">
-              <ScanLine size={20} />
-              <strong>Channel review.</strong>
-            </div>
-            <span className="preview-doc-caption">
-              A clearer picture. Practical priorities.
-            </span>
-            <div className="audit-rows">
-              <div>
-                <span>Profile & channel story</span>
-                <b>Clarify</b>
-              </div>
-              <div>
-                <span>Content & discoverability</span>
-                <b>Review</b>
-              </div>
-              <div>
-                <span>Schedule & next steps</span>
-                <b>Prioritize</b>
-              </div>
-            </div>
-            <div className="preview-note">
-              <Check size={11} /> A prioritized action list
-            </div>
-          </>
-        )}
-        {service.id === "survey" && (
-          <>
-            <div className="preview-doc-title">
-              <ClipboardList size={20} />
-              <strong>Listen first.</strong>
-            </div>
-            <span className="preview-doc-caption">
-              What brings you back to a stream?
-            </span>
-            <div className="survey-choices">
-              {[
-                "The content",
-                "The conversation",
-                "Learning something new",
-              ].map((x) => (
-                <span key={x}>
-                  <i />
-                  {x}
-                </span>
-              ))}
-            </div>
-            <div className="preview-note">
-              Questions built around your decisions.
-            </div>
-          </>
-        )}
-        {service.id === "landing" && (
-          <>
-            <div className="landing-demo-top">
-              <span>YOUR CHANNEL</span>
-              <span>ABOUT · SCHEDULE · CONTACT</span>
-            </div>
-            <div className="landing-demo-hero">
-              <span>YOUR CONTENT. ONE CLEAR DESTINATION.</span>
-              <strong>
-                A place to find
-                <br />
-                your next stream.
-              </strong>
-              <span className="landing-demo-cta">
-                Stream schedule <ArrowRight size={9} />
-              </span>
-            </div>
-            <div className="landing-demo-panels">
-              <span>MEET THE CREATOR</span>
-              <span>JOIN THE COMMUNITY</span>
-            </div>
-          </>
-        )}
-        {service.id === "club" && (
-          <>
-            <div className="preview-doc-title">
-              <FileCheck2 size={20} />
-              <strong>Ready to apply?</strong>
-            </div>
-            <span className="preview-doc-caption">
-              Preparation before submission.
-            </span>
-            <div className="application-rows">
-              {[
-                "Check current program guidance",
-                "Organize channel & work links",
-                "Draft your creator statement",
-                "Review the application materials",
-              ].map((x) => (
-                <span key={x}>
-                  <Check size={10} />
-                  {x}
-                </span>
-              ))}
-            </div>
-            <div className="preview-note">
-              Eligibility and acceptance are program decisions.
-            </div>
-          </>
-        )}
-        {service.id === "management" && (
-          <>
-            <div className="preview-doc-title">
-              <CalendarDays size={20} />
-              <strong>A clearer week.</strong>
-            </div>
-            <span className="preview-doc-caption">
-              An example of an agreed workflow.
-            </span>
-            <div className="management-week">
-              {[
-                ["MON", "Plan content"],
-                ["TUE", "Stream prep"],
-                ["WED", "Community"],
-                ["THU", "Clip review"],
-                ["FRI", "Next steps"],
-              ].map(([day, task]) => (
-                <div key={day}>
-                  <span>{day}</span>
-                  <i />
-                  <strong>{task}</strong>
-                </div>
-              ))}
-            </div>
-            <div className="preview-note">
-              <Check size={11} /> Clear tasks. Agreed responsibilities.
-            </div>
-          </>
-        )}
-        {service.id === "ads" && (
-          <>
-            <div className="preview-doc-title">
-              <MousePointer2 size={20} />
-              <strong>Google Ads.</strong>
-            </div>
-            <span className="preview-doc-caption">
-              A focused test, with an agreed objective.
-            </span>
-            <div className="ad-plan">
-              <div>
-                <span>OBJECTIVE</span>
-                <strong>Relevant visits</strong>
-              </div>
-              <div>
-                <span>DESTINATION</span>
-                <strong>Approved content or page</strong>
-              </div>
-              <div>
-                <span>BUDGET</span>
-                <strong>Agreed before launch</strong>
-              </div>
-            </div>
-            <div className="preview-note">
-              Media spend is separate. Results vary.
-            </div>
-          </>
-        )}
-      </div>
-      <span className="deliverable-disclosure">
-        EXAMPLE DELIVERABLE · NOT LIVE ACCOUNT DATA
-      </span>
+      <img
+        src="./services/service-scenes.webp"
+        alt=""
+        aria-hidden="true"
+        width="1881"
+        height="836"
+        loading="lazy"
+        decoding="async"
+        style={{
+          left: `${-(index % 3) * 100}%`,
+          transform: `translateY(-${index < 3 ? 25 : 75}%)`,
+        }}
+      />
     </div>
   );
 }
@@ -253,27 +133,36 @@ export function ChannelServices({ onSelect }) {
           {channelServices.map((service, index) => {
             const Icon = icons[service.icon];
             return (
-              <article className="channel-service-card" key={service.id}>
-                <button
-                  className="channel-service-open"
-                  onClick={() => onSelect(service)}
-                  aria-label={`Explore ${service.title}`}
-                >
-                  <ServicePreview service={service} />
-                  <div className="channel-card-copy">
-                    <div className="channel-card-step">
-                      <span>
-                        0{index + 1} / {service.step}
-                      </span>
-                      <Icon size={16} />
-                    </div>
-                    <h3>{service.title}</h3>
-                    <p>{service.summary}</p>
-                    <span className="channel-card-action">
-                      See scope & deliverables <ArrowUpRight size={16} />
+              <article
+                className="channel-service-card image-led-service"
+                key={service.id}
+              >
+                <ServicePreview service={service} />
+                <div className="channel-card-copy">
+                  <div className="channel-card-step">
+                    <Icon size={19} />
+                    <span>
+                      0{index + 1} {presentation[service.id].label}
                     </span>
                   </div>
-                </button>
+                  <h3>{presentation[service.id].title}</h3>
+                  <p>{service.summary}</p>
+                  <ul className="service-card-deliverables">
+                    {presentation[service.id].bullets.map((item) => (
+                      <li key={item}>
+                        <Check size={18} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    className="channel-service-open channel-card-action"
+                    onClick={() => onSelect(service)}
+                    aria-label={`Explore ${service.title}`}
+                  >
+                    See scope &amp; deliverables <ArrowUpRight size={18} />
+                  </button>
+                </div>
               </article>
             );
           })}

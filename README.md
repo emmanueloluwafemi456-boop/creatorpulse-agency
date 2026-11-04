@@ -49,3 +49,7 @@ The page uses solid purple accents, brighter dark surfaces, 16px main paragraphs
 ## About-section service guide
 
 `src/NextStepGuide.jsx` uses the space beneath the portrait on desktop to help visitors explore a service that matches their stated priority. It is a local selector, not a live channel scan or an assessment of eligibility. It opens the existing service dialogs and carries the chosen service into the on-page contact form. On tablet and mobile, the visual and DOM order is portrait, introduction, then guide.
+
+## Service card imagery
+
+The six service cards use a local, optimized WebP contact sheet at `public/services/service-scenes.webp`. Each card shows its matching portion with CSS cropping, followed by a service heading, description, three deliverables, and a full-width details button. The generated laptop/interface scenes are illustrative service imagery, not client screenshots, real campaign results, or official application portals. The original generated PNG remains outside the checkout in `/workspace/generated_images/`.

@@ -15,7 +15,14 @@ test("main page has the six requested services in two desktop rows", async ({
   await page.goto("/");
   await expect(page.locator(".channel-service-card")).toHaveCount(6);
   expect(await page.locator(".channel-card-copy h3").allTextContents()).toEqual(
-    titles,
+    [
+      "Twitch Channel Audit",
+      "Creator Survey",
+      "Creator Landing Page",
+      "Creator Club Application",
+      "Twitch Channel Management",
+      "Google Ads (Channel Promotion)",
+    ],
   );
   const boxes = await Promise.all(
     (await page.locator(".channel-service-card").all()).map((c) =>
