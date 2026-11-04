@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source not "../public/work-section-concept.html";
 :root {
   font-family: Inter, Arial, sans-serif;
   color: #f5f4fa;

@@ -41,3 +41,7 @@ The contact form validates the brief and opens an email draft. The visitor must 
 `npm run build` produces `dist/`. Deploy its contents to GitHub Pages, Netlify, or any static host. Vite uses relative asset paths to support a repository subpath. GitHub Pages is configured to publish the `gh-pages` branch from `/ (root)`.
 
 The public URL is https://emmanueloluwafemi456-boop.github.io/creatorpulse-agency/ . When moving domains, update the canonical and Open Graph URLs in `index.html`. The included SVG social card can be exported to PNG for social crawlers that require it. Fonts and graphics are self-hosted.
+
+## Work-section direction preview
+
+`/work-section-concept.html` is a separate, no-index proposal for a promotion-and-strategy showcase. It leaves the current React portfolio section in place. The rationale, research limitations, and commercial recommendations are in `WORK-SECTION-DIRECTION.md`.
