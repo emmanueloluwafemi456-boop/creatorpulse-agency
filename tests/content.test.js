@@ -39,7 +39,7 @@ test("eligibility and paid promotion are not represented as guaranteed monetizat
     /No viewers, Affiliate status, or income is guaranteed/,
   );
   assert.equal(process.length, 4);
-  assert.equal(faqs.length, 6);
+  assert.equal(faqs.length, 10);
 });
 test("contact destinations use the supplied WhatsApp and Gmail details", () => {
   assert.equal(siteConfig.email, "emmanueldigital839@gmail.com");

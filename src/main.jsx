@@ -24,6 +24,7 @@ import { channelServices, process, faqs } from "./data";
 import { ChannelServices, ChannelServiceDetails } from "./ChannelServices";
 import { siteConfig } from "./config";
 import Contact, { ContactOptions } from "./Contact";
+import ServicesTicker from "./ServicesTicker";
 import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-500.css";
 import "@fontsource/inter/latin-600.css";
@@ -279,17 +280,7 @@ function App() {
                 </div>
               ))}
             </Reveal>
-            <div className="expertise-line">
-              <span>CHANNEL AUDITS</span>
-              <i />
-              <span>AUDIENCE FEEDBACK</span>
-              <i />
-              <span>CREATOR PAGES</span>
-              <i />
-              <span>PROMOTION STRATEGY</span>
-              <i />
-              <span>CHANNEL MANAGEMENT</span>
-            </div>
+            <ServicesTicker />
           </div>
         </section>
         <section id="about" className="section container">
@@ -448,29 +439,55 @@ function App() {
           </div>
         </section>
         <ChannelServices onSelect={setModal} />
-        <section id="process" className="section container">
-          <Reveal className="process-heading">
-            <div>
-              <Eyebrow>NO COMPLICATED PLAYBOOK</Eyebrow>
+        <section id="process" className="section engagement-section">
+          <div className="container engagement-layout">
+            <Reveal className="engagement-intro">
+              <Eyebrow>WHAT WORKING TOGETHER LOOKS LIKE</Eyebrow>
               <h2>
-                A conversation.
+                Clear steps.
                 <br />
-                Then a clear way forward.
+                <span className="muted">Work you can follow.</span>
               </h2>
-            </div>
-            <p>
-              Here’s what working with me looks like. Simple steps, shared
-              expectations, room for your ideas.
-            </p>
-          </Reveal>
-          <div className="process-grid">
-            {process.map(([title, text], i) => (
-              <Reveal key={title} className="process-card">
-                <span className="process-number">0{i + 1}</span>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </Reveal>
-            ))}
+              <p>
+                You should know what we’re working on, why it matters, and what
+                happens next. Here’s how I keep the work organized from the
+                first conversation to delivery.
+              </p>
+              <div className="engagement-principles">
+                <h3>Clear from the beginning</h3>
+                <ul>
+                  <li>
+                    <Check size={16} />
+                    An agreed scope and responsibilities
+                  </li>
+                  <li>
+                    <Check size={16} />A realistic schedule and feedback plan
+                  </li>
+                  <li>
+                    <Check size={16} />
+                    Direct communication with me
+                  </li>
+                </ul>
+              </div>
+              <a className="button secondary" href="#contact">
+                Start with your channel <ArrowUpRight size={17} />
+              </a>
+            </Reveal>
+            <ol className="engagement-steps">
+              {process.map(([title, text, output], i) => (
+                <li className="engagement-step" key={title}>
+                  <span className="engagement-number">0{i + 1}</span>
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                    <div className="engagement-output">
+                      <span>WHAT YOU LEAVE WITH</span>
+                      <strong>{output}</strong>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
         <section className="section faq-section">
@@ -500,7 +517,11 @@ function App() {
                     <Plus className="faq-plus" size={17} />
                     <Minus className="faq-minus" size={17} />
                   </summary>
-                  <p>{a}</p>
+                  <div className="faq-answer">
+                    {(Array.isArray(a) ? a : [a]).map((paragraph, i) => (
+                      <p key={i}>{paragraph}</p>
+                    ))}
+                  </div>
                 </details>
               ))}
             </div>

@@ -146,45 +146,95 @@ export const channelServices = [
 ];
 export const process = [
   [
-    "Start with the channel",
-    "Tell me where you are now and what you want to improve. An audit can help us choose the right starting point.",
+    "Understand your channel",
+    "We start with your channel link, your goals, and the challenge you want help with. Where useful, an audit helps us separate the priorities from the distractions.",
+    "A clear starting point and recommended priorities.",
   ],
   [
-    "Choose useful work",
-    "We agree the service, deliverables, responsibilities, budget, and schedule that fit your situation.",
+    "Agree the work",
+    "Before starting, we confirm the service, deliverables, responsibilities, timing, and feedback arrangements. You can ask questions and make sure the scope fits your needs.",
+    "Written scope, expectations, and an agreed plan.",
   ],
   [
-    "Build & put it to use",
-    "I carry out the agreed work with your input and approval at the relevant stages.",
+    "Create, coordinate & refine",
+    "I carry out the agreed work and share it at the relevant review points. Your feedback helps keep the recommendations, content, or setup aligned with your channel.",
+    "Visible progress and agreed opportunities for feedback.",
   ],
   [
-    "Review the next step",
-    "We review the information available and decide what to maintain, refine, or try next.",
+    "Review & hand over",
+    "We review what has been delivered and how to use it. For ongoing services, we agree the next review; for a one-off project, we clarify the handover and useful next steps.",
+    "Your agreed deliverables, handover notes, and next priorities.",
   ],
 ];
 export const faqs = [
   [
     "Do I need to buy all six services?",
-    "No. The order shows a possible progression, not a compulsory package. We choose work based on your stage and goals. A Creator Club application depends on a suitable opportunity; Google Ads only makes sense when the objective, destination, and budget support a test.",
+    [
+      "No. Each service can be discussed on its own. The six services describe different ways I can support a creator; they are not a compulsory package or a sequence everyone needs to follow. We start with your situation, the problem you want to solve, and the resources you have available.",
+      "For example, you might only need a channel audit and a prioritized action list. A creator with an established routine might need management support instead. I’ll explain the proposed scope before you decide, including which work is optional or premature for your channel.",
+    ],
   ],
   [
     "Where should a new creator start?",
-    "Usually with a clear look at the channel, content, and goals. An audit can identify priorities. A survey becomes more useful once there are relevant people to ask, while paid promotion may be premature before the content and destination are ready.",
+    [
+      "Start by making your channel easy to understand: what you stream, who it is for, when people can find you, and what gives them a reason to return. An audit can help identify which of these foundations needs attention rather than adding more tools or promotion without a clear purpose.",
+      "A survey becomes useful when you have relevant people to ask. A landing page can bring your information together, while paid advertising needs a suitable objective, content, destination, and budget. We can discuss a starting point that matches your stage rather than assuming you need everything at once.",
+    ],
   ],
   [
-    "Can you guarantee monetization or earnings?",
-    "No. Twitch eligibility, program acceptance, audience response, policy compliance, and income are outside the scope of a service guarantee. I can support planning, channel presentation, promotion, and agreed operations as you work toward your goals.",
+    "What will I receive from a Channel Audit?",
+    [
+      "We agree which parts of your public channel and content presentation to review. The work can cover your channel introduction, positioning, schedule clarity, information structure, and the way viewers are invited to engage. Relevant analytics can add context if you choose to share them; the portfolio does not scan your account automatically.",
+      "The proposed deliverables are a review, practical observations, and a prioritized list of recommended next steps. The aim is to help you decide what deserves attention first. It is not a fabricated channel score, a promise of growth, or a decision about Twitch program eligibility.",
+    ],
+  ],
+  [
+    "How can a survey or creator page help my channel?",
+    [
+      "A focused survey can help you understand a specific question, such as preferred stream times, content interests, or what people value about your community. We agree the audience, questions, and collection approach before launch. Useful recommendations depend on genuine responses; I do not invent feedback or promise a response count.",
+      "A creator landing page gives people one clear place to find your introduction, schedule, stream links, and agreed contact options. We choose its content around the action you want visitors to take. Hosting, domain costs, integrations, and any data collection are discussed as part of the scope.",
+    ],
   ],
   [
     "Is advertising spend included in Google Ads services?",
-    "No. Advertising spend is separate from the agreed service fee. We confirm the campaign scope, budget, destination, and measurement approach before launch. Google reviews ads under its own policies.",
+    [
+      "No. Your advertising budget is separate from the service fee. Before a campaign is commissioned, we agree the objective, destination, creative requirements, setup or management responsibilities, and how spend and available performance information will be reviewed. Advertising is an optional test, not an automatic recommendation for every streamer.",
+      "Google reviews campaigns under its own policies. Measurement depends on the destination and the tools and consent arrangements available. Ad clicks should not be treated as proof of Twitch follows or income. I do not promise viewers, Affiliate status, monetization, or a particular return on advertising spend.",
+    ],
   ],
   [
     "Can I submit a Creator Club application here?",
-    "No. This page explains application-preparation support. A club’s current rules and application process must be checked first; official submission takes place through the program’s own process. No acceptance is promised.",
+    [
+      "No. I offer preparation support for Twitch’s official Creator Clubs program where its current availability and published criteria fit your situation. We first check the relevant guidance, then agree whether support with your channel information, supporting links, and creator statement would be useful.",
+      "Any official submission follows the program’s own process. This portfolio is not a Twitch application portal, and I am not acting as Twitch or a club representative. Acceptance is a program decision and cannot be guaranteed. Club participation should also not be treated as a required route to Affiliate, Partner, or income.",
+    ],
   ],
   [
-    "Does this website collect survey answers or access my Twitch account?",
-    "No. The service visuals illustrate the kind of work offered. They are not live account scans, campaign dashboards, surveys, or official application forms. Any actual project tools, data collection, or access requirements are agreed separately.",
+    "What does Channel Management include?",
+    [
+      "Management starts with an agreed list of responsibilities. That can include stream or content calendar planning, coordination of approved updates and assets, community communication, routine presentation tasks, and progress reviews. The scope should make it clear what I handle and what stays with you.",
+      "We confirm access permissions, working arrangements, communication channels, review frequency, and handover before starting. Live moderation, round-the-clock availability, financial administration, and additional platform work are not assumed to be included. If your needs change, we discuss the scope rather than adding unclear responsibilities.",
+    ],
+  ],
+  [
+    "How long does a project take, and how does feedback work?",
+    [
+      "Timing depends on the service, the amount of work, the information available, and how quickly decisions and feedback can be shared. A focused review and an ongoing management engagement need different plans. I’ll discuss a realistic schedule with you before the work begins instead of promising a turnaround that may not fit the project.",
+      "We also agree the review points, revision scope, and what is needed from you. That gives you a chance to ask questions and check direction while the work progresses. If a request changes the agreed deliverables or timing, we clarify the effect before carrying on.",
+    ],
+  ],
+  [
+    "Can you guarantee monetization or earnings?",
+    [
+      "No. Income depends on factors such as your content, audience response, consistency, platform requirements, and policy compliance. Twitch makes its own eligibility and program decisions. A service purchase cannot guarantee approval, followers, viewers, sponsorships, or earnings, and I do not offer purchased engagement or bots.",
+      "What I can offer is agreed work that supports your preparation and decision-making: a clearer view of the channel, useful audience feedback, organized information, practical promotion planning, or operational support. We set expectations around those deliverables and the information available, rather than an outcome nobody can responsibly promise.",
+    ],
+  ],
+  [
+    "What do you need from me, and how do I get in touch?",
+    [
+      "Send your Twitch channel link, the service you are considering, your current goal, and a short explanation of where you feel stuck. Relevant examples or existing materials can help us understand the direction. Please do not include passwords, payment information, or other sensitive details in an inquiry.",
+      "You can contact me directly using the WhatsApp or Gmail choices, or complete the project brief with all five required fields. The form reports whether the submission was accepted; if it cannot confirm submission, it keeps your details so you can retry or use a direct contact option. Any additional project access is agreed separately.",
+    ],
   ],
 ];
