@@ -59,3 +59,16 @@ test("promotion concept fits small mobile screens and larger layouts", async ({
     fullPage: true,
   });
 });
+
+test("directory preview address serves the concept and links back to the portfolio", async ({
+  page,
+}) => {
+  const response = await page.goto("/preview/");
+  expect(response.status()).toBe(200);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(
+    "a considered promotion plan",
+  );
+  await expect(
+    page.getByRole("link", { name: "Back to your portfolio" }),
+  ).toHaveAttribute("href", "../#work");
+});
