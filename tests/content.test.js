@@ -41,7 +41,11 @@ test("eligibility and paid promotion are not represented as guaranteed monetizat
   assert.equal(process.length, 4);
   assert.equal(faqs.length, 6);
 });
-test("contact remains unconfigured until the owner adds details", () => {
-  assert.equal(siteConfig.email, null);
-  assert.ok(Object.values(siteConfig.socials).every((s) => s === null));
+test("contact destinations use the supplied WhatsApp and Gmail details", () => {
+  assert.equal(siteConfig.email, "emmanueldigital839@gmail.com");
+  assert.equal(siteConfig.whatsapp, "https://wa.link/rloavr");
+  assert.equal(
+    siteConfig.formEndpoint,
+    "https://formsubmit.co/ajax/emmanueldigital839@gmail.com",
+  );
 });

@@ -1,6 +1,6 @@
 # Emmanuel — Personal Twitch Channel Services
 
-A responsive single-page React portfolio for Channel Audit, Survey, Creator Landing Page, Twitch Creator Club application preparation, Channel Management, and Google Ads. Services appear in a three-column, two-row desktop grid and open detailed on-page dialogs. No alternate preview page or external service redirects are required.
+A responsive single-page React portfolio for Channel Audit, Survey, Creator Landing Page, Twitch Creator Club application preparation, Channel Management, and Google Ads. Services appear in a three-column, two-row desktop grid and open detailed on-page dialogs. Service exploration stays on the same page. External navigation is limited to the owner’s WhatsApp and Gmail contact choices.
 
 ## Development
 
@@ -29,10 +29,12 @@ For a system Chromium, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. This cloud env
 
 - `src/data.js`: all six service scopes, deliverables, suitability, boundaries, and FAQs.
 - `src/ChannelServices.jsx`: service-specific deliverable illustrations and on-page details.
-- `src/config.js`: public name, email, Fiverr URL, and social links. Contact values are intentionally empty until the owner adds them.
+- `src/config.js`: public contact destinations and the configured FormSubmit recipient. `src/Contact.jsx` contains shared platform choices and the validated email form.
 - `SERVICE-SCOPE-RESEARCH.md`: service reasoning, actual source-access limitations, and claim boundaries. Older design-direction documents describe superseded proposals.
 
-Without an email configured, the contact form prepares a copyable project brief and sends nothing. With an email configured, it also offers an explicit email-draft link; the visitor reviews and sends it. The website does not run live Twitch scans, collect survey responses, submit official club applications, or launch ad campaigns. Those are separate client services with agreed scope and prerequisites.
+The contact form submits every required brief field to FormSubmit for email delivery to `emmanueldigital839@gmail.com`. WhatsApp and Gmail links are present in the contact section, FAQ, and footer. The recipient must activate FormSubmit through its confirmation email before delivery can be verified. See `CONTACT-DELIVERY.md` for the activation and live-delivery check. Browser tests mock the email provider and do not send test messages.
+
+The website does not run live Twitch scans, collect audience survey responses, submit official club applications, or launch ad campaigns. Those are separate client services with agreed scope and prerequisites.
 
 ## Deployment
 

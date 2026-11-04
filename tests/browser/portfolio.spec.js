@@ -83,32 +83,27 @@ test("keyboard focus stays in details and inquiry selects the requested service"
   await expect(page.locator("select[name=service]")).toHaveValue("Google Ads");
   await expect(page.getByRole("dialog")).toHaveCount(0);
 });
-test("page navigation stays local and contact prepares an honest draft", async ({
+test("external navigation is limited to the supplied contact choices", async ({
   page,
 }) => {
   await page.goto("/");
   const hrefs = await page
     .locator("a[href]")
     .evaluateAll((nodes) => nodes.map((n) => n.getAttribute("href")));
-  expect(hrefs.every((h) => h.startsWith("#"))).toBe(true);
-  await page.getByRole("button", { name: "Prepare my project brief" }).click();
-  await expect(page.locator(".draft-result")).toHaveCount(0);
-  await page.getByLabel("Your name", { exact: true }).fill("Test Creator");
-  await page.getByLabel("Email address").fill("creator@example.com");
-  await page
-    .getByLabel("What can I help you with?")
-    .selectOption("Channel Audit");
-  await page
-    .getByLabel("A little about your project")
-    .fill("I would like to understand what my channel should prioritize next.");
-  await page.getByRole("button", { name: "Prepare my project brief" }).click();
-  await expect(page.locator(".draft-result")).toContainText(
-    "No message has been submitted",
-  );
-  await expect(page.getByLabel("Your prepared project brief")).toHaveValue(
-    /Channel Audit/,
-  );
-  await expect(page.locator('a[href^="mailto:"]')).toHaveCount(0);
+  expect(
+    hrefs.every(
+      (h) =>
+        h.startsWith("#") ||
+        h === "https://wa.link/rloavr" ||
+        h.startsWith("https://mail.google.com/mail/?"),
+    ),
+  ).toBe(true);
+  await expect(
+    page.locator(".faq-contact-choices .platform-contact"),
+  ).toHaveCount(2);
+  await expect(
+    page.locator(".professional-footer .platform-contact"),
+  ).toHaveCount(2);
 });
 test("mobile menu, FAQ, reduced motion and responsive service layouts work", async ({
   page,

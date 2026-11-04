@@ -17,13 +17,13 @@ import {
   FileCheck2,
   Twitch,
   Sparkles,
-  Copy,
   CircleCheck,
   Monitor,
 } from "lucide-react";
 import { channelServices, process, faqs } from "./data";
 import { ChannelServices, ChannelServiceDetails } from "./ChannelServices";
 import { siteConfig } from "./config";
+import Contact, { ContactOptions } from "./Contact";
 import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-500.css";
 import "@fontsource/inter/latin-600.css";
@@ -122,181 +122,6 @@ function Modal({ title, children, onClose }) {
         <h2 id="modal-title">{title}</h2>
         {children}
       </section>
-    </div>
-  );
-}
-function Contact({ interest, setInterest }) {
-  const [draft, setDraft] = useState(""),
-    [copied, setCopied] = useState(false);
-  function submit(e) {
-    e.preventDefault();
-    const f = Object.fromEntries(new FormData(e.currentTarget));
-    const body = `Hi Emmanuel,\n\nMy name is ${f.name}.\nEmail: ${f.email}\nTwitch channel: ${f.channel || "Not supplied"}\nI'm interested in: ${f.service}\n\n${f.message}`;
-    setDraft(body);
-    setCopied(false);
-  }
-  return (
-    <div className="contact-grid">
-      <div>
-        <Eyebrow>LET’S TALK ABOUT YOUR CHANNEL</Eyebrow>
-        <h2>
-          Have a stream.
-          <br />
-          Have a vision.
-          <br />
-          <span className="gradient-text">Let’s connect.</span>
-        </h2>
-        <p>
-          Tell me where your channel is now and what you want help with. We can
-          discuss an audit, audience feedback, a creator page, or ongoing
-          support.
-        </p>
-        <div className="contact-person">
-          <img
-            src="./emmanuel-portrait.webp"
-            alt=""
-            width="48"
-            height="48"
-            loading="lazy"
-          />
-          <div>
-            <strong>You’ll be talking to me.</strong>
-            <span>Emmanuel · Twitch channel support</span>
-          </div>
-          <MessageCircle size={20} />
-        </div>
-        {siteConfig.email ? (
-          <a className="email-link" href={`mailto:${siteConfig.email}`}>
-            {siteConfig.email}
-            <ArrowUpRight size={18} />
-          </a>
-        ) : (
-          <p className="contact-status">
-            My direct contact details haven’t been added here yet. You can
-            prepare and copy your project brief using this form; nothing is
-            sent.
-          </p>
-        )}
-        {siteConfig.fiverr && (
-          <a
-            className="text-link"
-            href={siteConfig.fiverr}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Work with me on Fiverr <ArrowUpRight size={15} />
-          </a>
-        )}
-      </div>
-      <form className="contact-form" onSubmit={submit}>
-        <h3>What would you like to create?</h3>
-        <div className="form-grid">
-          <label>
-            Your name
-            <input
-              name="name"
-              autoComplete="name"
-              required
-              placeholder="Your name"
-              maxLength={100}
-            />
-          </label>
-          <label>
-            Email address
-            <input
-              name="email"
-              autoComplete="email"
-              type="email"
-              required
-              placeholder="you@example.com"
-            />
-          </label>
-          <label className="wide">
-            Twitch channel <span>(optional)</span>
-            <input
-              name="channel"
-              type="url"
-              placeholder="https://twitch.tv/yourchannel"
-            />
-          </label>
-          <label className="wide">
-            What can I help you with?
-            <select
-              name="service"
-              value={interest}
-              onChange={(e) => setInterest(e.target.value)}
-              required
-            >
-              <option disabled value="">
-                Choose a service
-              </option>
-              {channelServices.map((s) => (
-                <option key={s.id}>{s.title}</option>
-              ))}
-              <option>Let’s figure it out together</option>
-            </select>
-          </label>
-          <label className="wide">
-            A little about your project
-            <textarea
-              name="message"
-              required
-              minLength={10}
-              maxLength={5000}
-              rows={4}
-              placeholder="Your goals, the style you like, and what you need help with…"
-            />
-          </label>
-        </div>
-        <button className="button primary full" type="submit">
-          {siteConfig.email
-            ? "Prepare my email inquiry"
-            : "Prepare my project brief"}
-          <ArrowUpRight size={16} />
-        </button>
-        <small>
-          {siteConfig.email
-            ? "Prepare a draft, then open your email app to review and send."
-            : "Draft only — no message is submitted or stored."}
-        </small>
-        {draft && (
-          <div className="draft-result" role="status">
-            <strong>Your project brief is ready.</strong>
-            {siteConfig.email && (
-              <a
-                className="button primary email-draft"
-                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Twitch project inquiry")}&body=${encodeURIComponent(draft)}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open my email app <ArrowUpRight size={15} />
-              </a>
-            )}
-            <p>No message has been submitted through this website.</p>
-            <textarea
-              aria-label="Your prepared project brief"
-              readOnly
-              rows={7}
-              value={draft}
-            />
-            <button
-              type="button"
-              className="button secondary"
-              onClick={async () => {
-                try {
-                  await navigator.clipboard.writeText(draft);
-                  setCopied(true);
-                } catch {
-                  setCopied(false);
-                }
-              }}
-            >
-              <Copy size={15} />
-              {copied ? "Copied" : "Copy my brief"}
-            </button>
-          </div>
-        )}
-      </form>
     </div>
   );
 }
@@ -662,9 +487,10 @@ function App() {
                 <br />
                 There’s a real person on the other side.
               </p>
-              <a href="#contact" className="text-link">
-                Ask me directly <ArrowUpRight size={16} />
-              </a>
+              <div className="faq-contact-choices">
+                <span>Ask me directly</span>
+                <ContactOptions compact location="faq" />
+              </div>
             </Reveal>
             <div className="faq-list">
               {faqs.map(([q, a]) => (
@@ -686,41 +512,44 @@ function App() {
           </Reveal>
         </section>
       </main>
-      <footer>
-        <div className="container footer-top">
-          <Logo />
-          <span>
-            Clear priorities. Practical support. Your kind of channel.
-          </span>
-          <a href="#home" className="back-top">
-            Back to top <ArrowUp size={14} />
-          </a>
-        </div>
-        <div className="container footer-bottom">
-          <span>
-            © {new Date().getFullYear()} Emmanuel. Personal portfolio.
-          </span>
-          <div>
+      <footer className="professional-footer">
+        <div className="container footer-columns">
+          <div className="footer-identity">
+            <a className="footer-wordmark" href="#home">
+              Emmanuel<span>.</span>
+            </a>
+            <span className="footer-specialty">TWITCH CHANNEL SUPPORT</span>
+            <p>
+              Clear priorities and practical support
+              <br />
+              for your next stage as a creator.
+            </p>
+          </div>
+          <nav className="footer-navigation" aria-label="Footer navigation">
+            <h2>EXPLORE</h2>
             {navigation.slice(1).map(([name, id]) => (
               <a href={"#" + id} key={id}>
                 {name}
               </a>
             ))}
+          </nav>
+          <div className="footer-connect">
+            <h2>START A CONVERSATION</h2>
+            <ContactOptions compact location="footer" />
+            <span className="footer-email-address">{siteConfig.email}</span>
           </div>
-          <span>Independent. Not affiliated with Twitch.</span>
         </div>
-        {Object.values(siteConfig.socials).some(Boolean) && (
-          <div className="container social-links">
-            {Object.entries(siteConfig.socials)
-              .filter(([, url]) => url)
-              .map(([name, url]) => (
-                <a key={name} href={url} target="_blank" rel="noreferrer">
-                  {name}
-                  <ArrowUpRight size={14} />
-                </a>
-              ))}
-          </div>
-        )}
+        <div className="container footer-legal">
+          <span>
+            © {new Date().getFullYear()} Emmanuel. All rights reserved.
+          </span>
+          <span>
+            Independent service provider. Not affiliated with Twitch or Google.
+          </span>
+          <a href="#home" className="back-top">
+            Back to top <ArrowUp size={14} />
+          </a>
+        </div>
       </footer>
       {modal && (
         <Modal title={modal.title} onClose={() => setModal(null)}>

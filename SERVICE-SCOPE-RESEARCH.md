@@ -51,6 +51,6 @@ Every visual is labeled as an example deliverable. It contains no invented perfo
 
 ## Single-page behavior
 
-The old concept gallery, category filters, alternate preview HTML page, and directory-preview build script have been removed. The services are in the main React page at `#services`; the old `#work` anchor is retained as a local alias. Dialogs stay on-page, and their inquiry actions close the dialog and preselect a service in the same contact section. Contact values are empty until the owner supplies them. The form validates and prepares a copyable draft; it does not submit a message or collect project data on a server.
+The old concept gallery, category filters, alternate preview HTML page, and directory-preview build script have been removed. The services are in the main React page at `#services`; the old `#work` anchor is retained as a local alias. Dialogs stay on-page, and their inquiry actions close the dialog and preselect a service in the same contact section. The owner has now supplied WhatsApp and Gmail contact details. The brief form sends required project details through FormSubmit, subject to one-time recipient activation. See CONTACT-DELIVERY.md for the current implementation, validation, privacy disclosure, and unverified live-delivery prerequisite.
 
 Monetization is a creator goal this work may support. Approval, audience behavior, compliance, and actual income remain outside the scope of a service guarantee.
